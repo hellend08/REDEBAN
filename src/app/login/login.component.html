@@ -19,17 +19,8 @@
                     <!-- <mat-icon matSuffix>remove_red_eye</mat-icon> -->
                 </mat-form-field>
             </p>
-         
-            <re-captcha
-    (resolved)="resolved($event)"
-    siteKey="6LdzBV8aAAAAAEThINex651zNlCTqMUF0d434PwJ"
-  ></re-captcha>
-                <!-- <ngx-recaptcha2 #captchaElem
-                  [siteKey]="siteKey"
-                  
-                  >
-                </ngx-recaptcha2> -->
-                     <p>
+            <re-captcha (resolved)="resolved($event)" siteKey="6LdzBV8aAAAAAEThINex651zNlCTqMUF0d434PwJ"></re-captcha>
+            <p>
                 <a routerLink="/">
                     <button mat-stroked-button
                         style="background: linear-gradient(to right, #DB301C, #41125D, #241D75, #053CA3, #247AC0, #4F964A); color: #ffff; height: 55px; border-radius: 5px;"
