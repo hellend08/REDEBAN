@@ -3,8 +3,8 @@
         <header class="mb-5 mt-1">
             <img src="assets/images/redeban.png" alt="logo-redeban">
         </header>
-        <div class="pt-3 pb-1 bg-white px-5">
-            <h1 class="text-center text-2xl mb-8 font-bold text-blue-800">Inicia Sesión</h1>
+        <div class="pt-3 pb-1 bg-white px-5 rounded-lg">
+            <h1 class="text-center text-2xl mb-5 font-bold text-blue-800">Inicia Sesión</h1>
             <p>
                 <mat-form-field appearance="outline" class="w-full">
                     <mat-label>Correo electrónico o número tele</mat-label>
@@ -17,8 +17,10 @@
                     <input matInput placeholder="Tu contraseña va aquí">
                 </mat-form-field>
             </p>
-            <re-captcha (resolved)="resolved($event)" siteKey="6LeTJ18aAAAAABrs43dcPq9UeOdaZU9To28YAXqp
+            <div class="pl-5 pb-5"> 
+                <re-captcha (resolved)="resolved($event)" siteKey="6LeTJ18aAAAAABrs43dcPq9UeOdaZU9To28YAXqp
             "></re-captcha>
+            </div>
             <p>
                 <a routerLink="/">
                     <button mat-stroked-button
