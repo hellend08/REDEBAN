@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recover-password.component.css']
 })
 export class RecoverPasswordComponent implements OnInit {
+  resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response: ${captchaResponse}`);
+  }
 
   constructor() { }
 

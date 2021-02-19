@@ -16,6 +16,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
 import { LoginComponent } from './login/login.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
+import { RecaptchaModule } from "ng-recaptcha";
+// import { NgxCaptchaModule } from 'ngx-captcha';
 
 
 const routes: Routes = [
@@ -44,7 +46,9 @@ const routes: Routes = [
     MatSelectModule,
     MatRadioModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    RecaptchaModule,
+    // NgxCaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
