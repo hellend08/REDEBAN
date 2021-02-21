@@ -20,6 +20,10 @@ import { RecaptchaModule } from "ng-recaptcha";
 // import { NgxCaptchaModule } from 'ngx-captcha';
 
 
+
+// import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
+
+
 const routes: Routes = [
   { path: '', component: LoginComponent, pathMatch: 'full' },
   { path: 'login', component:  LoginComponent },
@@ -54,3 +58,6 @@ const routes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
