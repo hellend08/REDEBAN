@@ -17,17 +17,18 @@ import {MatIconModule} from '@angular/material/icon';
 import { LoginComponent } from './login/login.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 import { RecaptchaModule } from "ng-recaptcha";
-// import { NgxCaptchaModule } from 'ngx-captcha';
+// import { RegisterComponent } from './change-key/change-key.component';
+import { AdmissionProfileComponent } from './admission-profile/admission-profile.component';
+import { ChangeKeyComponent } from './change-key/change-key.component';
 
-
-
-// import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
 
 
 const routes: Routes = [
   { path: '', component: LoginComponent, pathMatch: 'full' },
   { path: 'login', component:  LoginComponent },
   { path: 'recover-pass', component:  RecoverPasswordComponent },
+  { path: 'change-key', component:  ChangeKeyComponent },
+  { path: 'admission', component:  AdmissionProfileComponent },
 
 ];
 
@@ -37,6 +38,9 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     RecoverPasswordComponent,
+    // RegisterComponent,
+    AdmissionProfileComponent,
+    ChangeKeyComponent,
    
   ],
   imports: [
