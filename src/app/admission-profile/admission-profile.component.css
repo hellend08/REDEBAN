@@ -1,0 +1,29 @@
+.text-color{
+    color: #00339F;
+}
+
+.text-color:hover{
+    text-decoration: none;
+}
+
+.color-basic{
+    border-color: #00339F; 
+    color: #00339F;
+    height: 50px; 
+    border-radius: 5px; 
+    min-width: 196px;
+}
+
+.color-gradient{
+    background: linear-gradient(to right, #DB301C, #41125D, #241D75, #053CA3, #247AC0, #4F964A);
+    color: #ffff;
+    height: 50px;
+    border-radius: 5px;
+    min-width: 196px;
+    margin-left: 33px;
+}
+
+.size-logo{
+    width:520px;
+    height:115px;
+}
