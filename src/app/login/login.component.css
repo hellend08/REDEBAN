@@ -14,6 +14,12 @@
     height: 45px;
 }
 
+.color-basic:hover{
+    background-color: #00339F;
+    color: #FFFF;
+    transition-duration: .5s;
+}
+
 .color-gradient{
     background: linear-gradient(to right, #DB301C, #41125D, #241D75, #053CA3, #247AC0, #4F964A);
     color: #ffff;
@@ -21,8 +27,17 @@
     border-radius: 5px;
 }
 
+.mat-icon{
+    display: none;
+}
+
+.color-gradient:hover .mat-icon{
+    display: inline-block !important;
+    transition-duration: .5s !important;
+}
+
 :host ::ng-deep .mat-form-field-wrapper{
-    margin: 0 !important;
+    margin: .5rem !important;
     padding: 0;
   }
 

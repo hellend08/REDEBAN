@@ -20,6 +20,7 @@ import { RecaptchaModule } from "ng-recaptcha";
 // import { RegisterComponent } from './change-key/change-key.component';
 import { AdmissionProfileComponent } from './admission-profile/admission-profile.component';
 import { ChangeKeyComponent } from './change-key/change-key.component';
+// import {NgRecaptcha3Service} from 'ng-recaptcha3';
 
 
 
