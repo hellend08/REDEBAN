@@ -14,14 +14,18 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDividerModule} from '@angular/material/divider';
+
 import { LoginComponent } from './login/login.component';
 import { RecoverPasswordComponent } from './recover-password/recover-password.component';
 import { RecaptchaModule } from "ng-recaptcha";
-// import { RegisterComponent } from './change-key/change-key.component';
 import { AdmissionProfileComponent } from './admission-profile/admission-profile.component';
 import { ChangeKeyComponent } from './change-key/change-key.component';
+import { NewUserComponent } from './new-user/new-user.component';
+import { KeyOtpComponent } from './key-otp/key-otp.component';
+import { DetailsUserComponent } from './details-user/details-user.component';
 // import {NgRecaptcha3Service} from 'ng-recaptcha3';
-
 
 
 const routes: Routes = [
@@ -30,7 +34,9 @@ const routes: Routes = [
   { path: 'recover-pass', component:  RecoverPasswordComponent },
   { path: 'change-key', component:  ChangeKeyComponent },
   { path: 'admission', component:  AdmissionProfileComponent },
-
+  { path: 'new-user', component:  NewUserComponent },
+  { path: 'key-otp', component:  KeyOtpComponent },
+  { path: 'details-user', component:  DetailsUserComponent },
 ];
 
 
@@ -39,9 +45,11 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     RecoverPasswordComponent,
-    // RegisterComponent,
     AdmissionProfileComponent,
     ChangeKeyComponent,
+    NewUserComponent,
+    KeyOtpComponent,
+    DetailsUserComponent,
    
   ],
   imports: [
@@ -57,6 +65,8 @@ const routes: Routes = [
     MatGridListModule,
     MatIconModule,
     RecaptchaModule,
+    MatCheckboxModule,
+    MatDividerModule
     // NgxCaptchaModule
   ],
   providers: [],
