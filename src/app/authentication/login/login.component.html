@@ -12,15 +12,13 @@
             </p>
         </div>
         <div class="col px-4" style="max-width: 520px;">
-            <!-- <header class="mb-5 mt-1">
-                <img src="assets/images/redeban.png" alt="logo-redeban">
-            </header> -->
             <div class="py-3 px-12  bg-white rounded-lg">
                 <h3 class="text-left text-color mb-4 pt-5 mx-5 pl-3 font-bold">Inicia Sesión</h3>
                 <p class="no-spacing text-center">
                     <mat-form-field appearance="outline" class="mx-5 w-75">
                         <mat-label>Correo electrónico o celular</mat-label>
                         <input type="email" matInput placeholder="johndoe@micomercio.com">
+                        <mat-error>Error</mat-error>
                     </mat-form-field>
                 </p>
                 <p class="text-center">
@@ -31,7 +29,7 @@
                 </p>
                 <p class="text-center">
                     <a routerLink="/admission">
-                        <button mat-stroked-button class="my-3 w-50 color-gradient">Ingresar  
+                        <button (click)="submit()" mat-stroked-button class="my-3 w-50 color-gradient" >Ingresar  
                             <mat-icon matSuffix>keyboard_arrow_right
                             </mat-icon>
                         </button>

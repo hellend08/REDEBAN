@@ -1,0 +1,43 @@
+<header class="top-bar py-4">
+    <div class="container">
+        <div class="d-flex flex-row">
+            <div *ngIf="showBackBtn" class="d-flex flex-row">
+                <a routerLink="/login" class="block -mt-1 mr-3">
+                    <button mat-icon-button class="text-primary">
+                        <mat-icon>arrow_back_ios</mat-icon>
+                    </button>
+                </a>
+                <h1 class="">Inicio</h1>
+            </div>
+            <div class="ml-auto">
+                <button mat-button [matMenuTriggerFor]="userMenu">
+                    <div class="d-flex items-center py-1 px-2 bg-primary-200 rounded-lg">
+                        <img class="user-avatar mr-2"
+                            src="https://images.pexels.com/photos/2726111/pexels-photo-2726111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+                        <p class="text-sm text-primary mr-2">El Comercio de Siempre
+                        910203040 - Terminal 003
+                        Luis Fernanda Martinez Gutierrez</p>
+                        <mat-icon class="text-primary">arrow_drop_down</mat-icon>
+                    </div>
+                </button>
+                <mat-menu #userMenu="matMenu">
+                    <button mat-menu-item>
+                        <mat-icon>account_circle </mat-icon>
+                        Mi Cuenta
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>vpn_key</mat-icon>
+                        Cambiar Contraseña
+                    </button>
+                    <!-- <button mat-menu-item>Configuración</button>
+            <button mat-menu-item>Ayuda</button> -->
+                    <a routerLink="/login">
+                        <button mat-menu-item>
+                            <mat-icon>power_settings_new</mat-icon>
+                            Cerrar Sesión
+                        </button></a>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+</header>

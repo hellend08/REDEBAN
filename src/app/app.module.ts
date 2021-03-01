@@ -16,15 +16,23 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
-import { LoginComponent } from './login/login.component';
-import { RecoverPasswordComponent } from './recover-password/recover-password.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { RecoverPasswordComponent } from './authentication/recover-password/recover-password.component';
 import { RecaptchaModule } from "ng-recaptcha";
 import { AdmissionProfileComponent } from './admission-profile/admission-profile.component';
-import { ChangeKeyComponent } from './change-key/change-key.component';
+import { ChangeKeyComponent } from './authentication/change-key/change-key.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import { KeyOtpComponent } from './key-otp/key-otp.component';
 import { DetailsUserComponent } from './details-user/details-user.component';
+import { ManageProfileComponent } from './manage-profile/manage-profile.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ManageRolesComponent } from './manage-roles/manage-roles.component';
 // import {NgRecaptcha3Service} from 'ng-recaptcha3';
 
 
@@ -37,6 +45,10 @@ const routes: Routes = [
   { path: 'new-user', component:  NewUserComponent },
   { path: 'key-otp', component:  KeyOtpComponent },
   { path: 'details-user', component:  DetailsUserComponent },
+  { path: 'dashboard', component:  DashboardComponent },
+  { path: 'topbar', component:  TopBarComponent },
+  { path: 'manage-profile', component:  ManageProfileComponent },
+  { path: 'manage-roles', component:  ManageRolesComponent },
 ];
 
 
@@ -50,6 +62,12 @@ const routes: Routes = [
     NewUserComponent,
     KeyOtpComponent,
     DetailsUserComponent,
+    ManageProfileComponent,
+    DashboardComponent,
+    TopBarComponent,
+    SideBarComponent,
+    FooterComponent,
+    ManageRolesComponent,
    
   ],
   imports: [
@@ -66,7 +84,9 @@ const routes: Routes = [
     MatIconModule,
     RecaptchaModule,
     MatCheckboxModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTableModule,
+    MatPaginatorModule,
     // NgxCaptchaModule
   ],
   providers: [],

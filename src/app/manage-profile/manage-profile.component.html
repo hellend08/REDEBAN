@@ -1,0 +1,71 @@
+<div class="container my-5">
+    <div class="d-flex flex-row">
+        <p class="w-50 mr-auto">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+            Velit officia consequat duis enim velit mollit. Exercitation veniam
+            consequat sunt nostrud amet.</p>
+        <button class="my-3" mat-raised-button>
+            <mat-icon>add_circle_outline</mat-icon> Perfil
+        </button>
+    </div>
+    <div>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="profile">
+                <th mat-header-cell *matHeaderCellDef> Perfil </th>
+                <td mat-cell *matCellDef="let element"> {{element.profile}} </td>
+            </ng-container>
+            <ng-container matColumnDef="keyMin">
+                <th mat-header-cell *matHeaderCellDef>Clave Min </th>
+                <td mat-cell *matCellDef="let element"> {{element.keyMin}} </td>
+            </ng-container>
+            <ng-container matColumnDef="keyMax">
+                <th mat-header-cell *matHeaderCellDef>Clave Max</th>
+                <td mat-cell *matCellDef="let element"> {{element.keyMax}} </td>
+            </ng-container>
+            <ng-container matColumnDef="mayus">
+                <th mat-header-cell *matHeaderCellDef>Mayúscula Carac. Min.</th>
+                <td mat-cell *matCellDef="let element"> {{element.mayus}} </td>
+            </ng-container>
+            <ng-container matColumnDef="minus">
+                <th mat-header-cell *matHeaderCellDef>Minúscula Carac. Min.</th>
+                <td mat-cell *matCellDef="let element"> {{element.minus}} </td>
+            </ng-container>
+            <ng-container matColumnDef="number">
+                <th mat-header-cell *matHeaderCellDef>Números Min.</th>
+                <td mat-cell *matCellDef="let element"> {{element.number}} </td>
+            </ng-container>
+            <ng-container matColumnDef="specials">
+                <th mat-header-cell *matHeaderCellDef>Especiales Min.</th>
+                <td mat-cell *matCellDef="let element"> {{element.specials}} </td>
+            </ng-container>
+            <ng-container matColumnDef="repeated">
+                <th mat-header-cell *matHeaderCellDef>Repetidos Max.</th>
+                <td mat-cell *matCellDef="let element"> {{element.repeated}} </td>
+            </ng-container>
+            <ng-container matColumnDef="listBlack">
+                <th mat-header-cell *matHeaderCellDef>Lista Negra</th>
+                <td mat-cell *matCellDef="let element"> {{element.listBlack}} </td>
+            </ng-container>
+            <ng-container matColumnDef="lastPass">
+                <th mat-header-cell *matHeaderCellDef>Últimas contraseñas</th>
+                <td mat-cell *matCellDef="let element"> {{element.lastPass}} </td>
+            </ng-container>
+            <ng-container matColumnDef="validity">
+                <th mat-header-cell *matHeaderCellDef>Vigencia Max.</th>
+                <td mat-cell *matCellDef="let element"> {{element.validity}} </td>
+            </ng-container>
+            <ng-container matColumnDef="start">
+                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <td mat-cell *matCellDef="let element">
+                    <a>
+                        <mat-icon>edit</mat-icon>
+                    </a>
+                    <a>
+                        <mat-icon>delete</mat-icon>
+                    </a>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>
