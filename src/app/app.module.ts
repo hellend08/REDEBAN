@@ -87,7 +87,6 @@ const routes: Routes = [
     MatDividerModule,
     MatTableModule,
     MatPaginatorModule,
-    // NgxCaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
