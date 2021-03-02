@@ -18,6 +18,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 
 import { LoginComponent } from './authentication/login/login.component';
 import { RecoverPasswordComponent } from './authentication/recover-password/recover-password.component';
@@ -28,7 +30,6 @@ import { NewUserComponent } from './new-user/new-user.component';
 import { KeyOtpComponent } from './key-otp/key-otp.component';
 import { DetailsUserComponent } from './details-user/details-user.component';
 import { ManageProfileComponent } from './manage-profile/manage-profile.component';
-import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -45,10 +46,12 @@ const routes: Routes = [
   { path: 'new-user', component:  NewUserComponent },
   { path: 'key-otp', component:  KeyOtpComponent },
   { path: 'details-user', component:  DetailsUserComponent },
-  { path: 'dashboard', component:  DashboardComponent },
-  { path: 'topbar', component:  TopBarComponent },
+  { path: 'top-bar', component:  TopBarComponent },
   { path: 'manage-profile', component:  ManageProfileComponent },
   { path: 'manage-roles', component:  ManageRolesComponent },
+  { path: 'side-bar', component:  SideBarComponent },
+  { path: 'footer', component:  FooterComponent },
+
 ];
 
 
@@ -63,7 +66,6 @@ const routes: Routes = [
     KeyOtpComponent,
     DetailsUserComponent,
     ManageProfileComponent,
-    DashboardComponent,
     TopBarComponent,
     SideBarComponent,
     FooterComponent,
@@ -87,6 +89,7 @@ const routes: Routes = [
     MatDividerModule,
     MatTableModule,
     MatPaginatorModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

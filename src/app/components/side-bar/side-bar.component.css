@@ -1,0 +1,35 @@
+.container-side-bar {
+  
+    width: 100%;
+  /* max-width: 84px; */
+    height: 100%;
+  }
+
+  img{
+    margin-top: 20px;
+  }
+  
+  .example-sidenav-content {
+      /* position: fixed; */
+      width: 100px;
+    display: flex;
+    /* visibility: hidden; */
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+  }
+  
+  /* .example-sidenav {
+    padding: 20px;
+  } */
+
+  /* .mat-drawer:hover{
+      visibility: visible;
+      background-color: khaki;
+  } */
+.list{
+    margin-top: 30px;
+    list-style: none !important;
+}
+
