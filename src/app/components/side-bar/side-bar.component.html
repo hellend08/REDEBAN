@@ -9,28 +9,34 @@
       </button>
     </li>
   </ul> -->
-  
-  <mat-drawer-container class="container-side-bar" autosize (click)="drawer.toggle()">
-    <app-top-bar></app-top-bar>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-      <img src="../../../assets/images/logo-side-bar.png" alt="logo" width="100px" height="100px">
-      <p *ngIf="showFiller"></p>
-      <ul>
-        <li class="list"><mat-icon>extension</mat-icon></li>
-        <li class="list"><mat-icon>settings</mat-icon></li>
-        <li class="list"><mat-icon>cloud_queue</mat-icon></li>
-        <li class="list"><mat-icon>repeat</mat-icon></li>
-        <li class="list"><mat-icon>account_box</mat-icon></li>
-        <li class="list"><mat-icon>build</mat-icon></li>
-        <li class="list"><mat-icon>contact_support</mat-icon></li>
-      </ul>
-    </mat-drawer>
-  
-    <!-- <div class="">
-      <button type="button" mat-button (click)="drawer.toggle()">
-        Toggle sidenav
-      </button>
-    </div> -->
-  
-  </mat-drawer-container>
 
+<mat-drawer-container class="container-side-bar" autosize (click)="drawer.toggle()">
+  <app-top-bar></app-top-bar>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <img src="assets/images/logo-side-bar.png" alt="logo" width="100px" height="100px">
+    <p *ngIf="showFiller"></p>
+    <ul>
+      <li class="list">
+        <mat-icon>extension</mat-icon>
+      </li>
+      <li class="list">
+        <mat-icon>settings</mat-icon>
+      </li>
+      <li class="list">
+        <mat-icon>cloud_queue</mat-icon>
+      </li>
+      <li class="list">
+        <mat-icon>repeat</mat-icon>
+      </li>
+      <li class="list">
+        <mat-icon>account_box</mat-icon>
+      </li>
+      <li class="list">
+        <mat-icon>build</mat-icon>
+      </li>
+      <li class="list">
+        <mat-icon>contact_support</mat-icon>
+      </li>
+    </ul>
+  </mat-drawer>
+</mat-drawer-container>

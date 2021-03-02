@@ -13,8 +13,11 @@
 }
 
 .top-bar {
-  background: #FFFFFF;
+  background: #F9FBFC;
   box-shadow: 10px 10px 30px rgba(174, 174, 192, 0.4);
+  position: fixed;
+  left: 0;
+  width: 100%;
 }
 
 .parrafo {
