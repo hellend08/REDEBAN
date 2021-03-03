@@ -11,3 +11,10 @@ ul{
 .item-footer{
     margin-inline: 30px;
 }
+
+@media (min-width: 1900px) {
+    .margin-xl{
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+   }

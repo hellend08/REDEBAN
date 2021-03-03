@@ -1,5 +1,5 @@
 <header class="top-bar py-3">
-    <div class="container">
+    <div class="margin-xl px-5">
         <div class="d-flex flex-row">
             <div *ngIf="showBackBtn" class="d-flex flex-row">
                 <a routerLink="/login" class="block mt-2 mx-2 d-flex flex-row">
@@ -8,7 +8,6 @@
                     </button>
                     <h4 class="text-secondary mt-2 font-weight-normal">Inicio</h4>
                 </a>
-                
             </div>
             <div class="ml-auto d-flex flex-wrap">
                 <button class="d-flex flex-wrap" mat-button [matMenuTriggerFor]="userMenu">
