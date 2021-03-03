@@ -11,7 +11,7 @@
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="profile">
                 <th mat-header-cell *matHeaderCellDef> Perfil </th>
-                <td mat-cell *matCellDef="let element"> {{element.profile}} </td>
+                <td mat-cell *matCellDef="let element" class="pr-3 text-left"> {{element.profile}} </td>
             </ng-container>
             <ng-container matColumnDef="keyMin">
                 <th mat-header-cell *matHeaderCellDef>Clave Min </th>
@@ -55,12 +55,12 @@
             </ng-container>
             <ng-container matColumnDef="start">
                 <th mat-header-cell *matHeaderCellDef>Action</th>
-                <td mat-cell *matCellDef="let element">
-                    <a >
-                        <mat-icon>edit</mat-icon>
+                <td mat-cell *matCellDef="let element" class="">
+                    <a>
+                        <mat-icon class="d-inline">edit</mat-icon>
                     </a>
-                    <a (click)="openDialog()" style="cursor: pointer;" >
-                        <mat-icon>delete</mat-icon>
+                    <a (click)="openDialog()" style="cursor: pointer;"  >
+                        <mat-icon class="d-inline">delete</mat-icon>
                     </a>
                 </td>
             </ng-container>
