@@ -9,7 +9,9 @@ import { NavigationEnd, Router } from '@angular/router';
 export class TopBarComponent implements OnInit {
   showBackBtn: boolean = true;
 
-  constructor(private router: Router) {
+  constructor(
+    // private router: Router
+    ) {
     // router.events.subscribe((val) => {
     //   if (val instanceof NavigationEnd) {
     //     this.showBackBtn = val.url === '/login';

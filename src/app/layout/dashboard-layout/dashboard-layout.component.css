@@ -1,0 +1,7 @@
+.mat-drawer-inner-container {
+    position: relative;
+  }
+  
+  .mat-drawer-content {
+    margin-left: 100px!important;
+  }

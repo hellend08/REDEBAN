@@ -1,0 +1,13 @@
+li{
+    list-style: none;
+    line-height: 16px;
+    font-size: 14px;
+}
+
+ul{
+    padding-left: 0px !important;
+}
+
+.item-footer{
+    margin-inline: 30px;
+}

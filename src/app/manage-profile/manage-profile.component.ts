@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import {DialogDeleteComponent} from '../dialog-delete/dialog-delete.component';
 
 export interface PeriodicElement {
   
@@ -30,7 +32,11 @@ export class ManageProfileComponent implements OnInit {
   displayedColumns: string[] = ['profile', 'keyMin', 'keyMax', 'mayus', 'minus', 'number', 'specials', 'repeated', 'listBlack', 'lastPass', 'validity', 'start' ];
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
+
+  openDialog() {
+    this.dialog.open(DialogDeleteComponent);
+  }
 
   ngOnInit(): void {
   }
