@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup, Validators, FormBuilder} from '@angular/forms'
+
 
 interface User {
   value: string;
@@ -30,10 +32,26 @@ export class DetailsUserComponent implements OnInit {
     {value: 'user-2', viewValue: '914587925-MI EMPRENDIMIENTO.COM'}
   ];
 
+  form!: FormGroup;
 
-  constructor() { }
+  constructor(public fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      name: [ '', [Validators.compose([Validators.required, Validators.pattern('[A -Za-z0-9]*')]), Validators.minLength(2)]],
+      number: [ '', [Validators.compose([Validators.required, Validators.pattern('[0-9]*')]), Validators.minLength(10)]],
+      phone: [ '', [Validators.compose([Validators.required, Validators.pattern('[0-9]*')]), Validators.minLength(10)]],
+      
+    })
+  }
+
+  public submit(){
+    console.log('Form value', this.form.value);
+  }
+
+  public enableSubmitBtn(): boolean{
+    return this.form.valid;
   }
 
 }

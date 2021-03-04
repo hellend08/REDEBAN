@@ -1,46 +1,65 @@
-.text-color{
-    color: #00339F;
+.text-color {
+  color: #00339F;
 }
 
-.text-color:hover{
-    text-decoration: none;
+.text-color:hover {
+  text-decoration: none;
 }
 
-.color-basic{
-    border-color: #00339F; 
-    color: #00339F;
-    height: 50px; 
-    border-radius: 5px; 
-    min-width: 196px;
+.color-basic {
+  border-color: #00339F;
+  color: #00339F;
+  height: 50px;
+  border-radius: 5px;
+  min-width: 196px;
 }
 
-.color-gradient{
-    background: linear-gradient(to right, #DB301C, #41125D, #241D75, #053CA3, #247AC0, #4F964A);
-    color: #ffff;
-    height: 50px;
-    min-width: 196px;
-    border-radius: 5px;
-    margin-left: 33px;
+.color-gradient {
+  background: linear-gradient(to right, #DB301C, #41125D, #241D75, #053CA3, #247AC0, #4F964A);
+  color: #ffff;
+  height: 50px;
+  min-width: 196px;
+  border-radius: 5px;
+  margin-left: 33px;
 }
 
-.size-logo{
-    width:520px;
-    height:115px;
+.size-logo {
+  width: 520px;
+  height: 115px;
 }
 
-:host ::ng-deep .mat-form-field-wrapper{
-    margin: 0 !important;
-    padding: 0;
-  }
+:host ::ng-deep .mat-form-field-wrapper {
+  margin: 0 !important;
+  padding: 0;
+}
 
-  input.example-right-align::-webkit-outer-spin-button,
-  input.example-right-align::-webkit-inner-spin-button {
-    display: none;
-  }
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
 
-  .example-container .mat-form-field + .mat-form-field {
-    margin-left: 14px;
-  }
-  .example-margin {
-    margin-right:350px;
-  }
+.example-container .mat-form-field+.mat-form-field {
+  margin-left: 24px;
+}
+
+.example-margin {
+  margin-right: 350px;
+}
+
+:host ::ng-deep.mat-form-field-prefix {
+  top: 0px !important;
+}
+
+.input-phone {
+  max-width: 47%;
+}
+
+:host ::ng-deep.mat-form-field-appearance-outline.mat-form-field-disabled{
+  background-color: rgba(226, 226, 226, 0.822);
+  border-radius: 4px;
+}
+
+:host ::ng-deep.mat-form-field-appearance-outline #mat-form-field-label-15{
+  /* border-top: 0px !important; */
+  top: 20px !important;
+}
