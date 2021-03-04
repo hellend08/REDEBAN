@@ -1,6 +1,5 @@
-// import { group } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-// import {FormBuilder, Validators} from '@angular/forms';
+import {FormGroup, Validators, FormBuilder} from '@angular/forms'
 
 @Component({
   selector: 'app-login',
@@ -9,18 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  public submit(){
-    console.log('ready');
-  }
+  form!: FormGroup;
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
   }
-  // userInfo = this.fb.group({
-  //   userEmail: ['', Validators.compose([Validators.required, Validators.pattern('A-Za-z0-9')])],
-  //   password:['', Validators.compose([Validators.required, Validators.pattern('A-Za-z0-9')])]
-  // })
 
   ngOnInit(): void {
+    this.form = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      pass: [ '', [Validators.required, Validators.minLength(2), Validators.maxLength(10)]],
+    })
   }
 
+  public submit(){
+    console.log('Form value', this.form.value);
+  }
+
+  public enableSubmitBtn(): boolean{
+    return this.form.valid;
+  }
 }
