@@ -1,46 +1,98 @@
-.text-color{
-    color: #00339F;
+.text-color {
+  color: #00339F;
 }
 
-.text-color:hover{
-    text-decoration: none;
+.text-color:hover {
+  text-decoration: none;
 }
 
-.color-basic{
-    border-color: #00339F;
-    color: #00339F;
-    max-width: 320px;
-    min-width: 250px;
-    height: 45px;
+.color-basic {
+  border-color: #00339F;
+  color: #00339F;
+  max-width: 320px;
+  min-width: 250px;
+  height: 45px;
+  transition: all .2s;
 }
 
-.color-basic:hover{
-    background-color: #00339F;
-    color: #FFFF;
-    transition-duration: .5s;
+.color-basic:hover {
+  color: #FFFF;
 }
 
-.color-gradient{
-    background: linear-gradient(to right, #DB301C, #41125D, #241D75, #053CA3, #247AC0, #4F964A);
-    color: #ffff;
-    height: 50px;
-    border-radius: 5px;
+.color-basic:before{
+  transition: .3s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: #00339F;
+  border-radius: 50%;
 }
 
-.mat-icon{
-    display: none;
+.color-basic:hover:before{
+  transition: .3s all ease;
+  position: absolute;
+  top: -1%;
+  left: -1%;
+  right: -1%;
+  bottom: -1%;
+  opacity: 1;
+  z-index: -1;
+  border-radius: 4px;
 }
 
-.color-gradient:hover .mat-icon{
-    display: inline-block !important;
-    transition-duration: .5s !important;
+.color-gradient {
+  background: linear-gradient(to right, #DB301C, #41125D, #241D75, #053CA3, #247AC0, #4F964A);
+  color: #ffff;
+  height: 50px;
+  border-radius: 5px;
+  transition: all .2s;
 }
 
-:host ::ng-deep .mat-form-field-wrapper{
-    margin: .5rem !important;
-    padding: 0;
-  }
+.color-gradient:hover{
+  color: #FFFF;
+  background: #00339F;
+}
 
-  .no-spacing{
-    margin: 0 !important;
-  }
+.color-gradient:before{
+  transition: .3s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: #00339F;
+  border-radius: 50%;
+}
+
+.color-gradient:hover:before{
+  transition: .3s all ease;
+  position: absolute;
+  top: -1%;
+  left: -1%;
+  right: -1%;
+  bottom: -1%;
+  opacity: 1;
+  z-index: -1;
+  border-radius: 4px;
+}
+.mat-icon {
+  display: none;
+}
+:host ::ng-deep .mat-form-field-wrapper {
+  margin: .5rem !important;
+  padding: 0;
+}
+
+.no-spacing {
+  margin: 0 !important;
+}
+
+.mat-stroked-button.mat-button-disabled.mat-button-disabled {
+  color: rgb(207, 207, 207);
+}
