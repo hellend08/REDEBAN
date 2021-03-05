@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogDeleteComponent} from '../dialog-delete/dialog-delete.component';
-
-
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 
 
 export interface PeriodicElement {
@@ -29,10 +29,16 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './manage-roles.component.html',
   styleUrls: ['./manage-roles.component.css']
 })
-export class ManageRolesComponent implements OnInit {
+export class ManageRolesComponent implements AfterViewInit {
 
   displayedColumns: string[] = ['name', 'description', 'state', 'action'];
-  dataSource = ELEMENT_DATA;
+  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
 
   constructor(public dialog: MatDialog) { }
 

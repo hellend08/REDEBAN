@@ -29,8 +29,8 @@
 }
 
 :host ::ng-deep .mat-form-field-wrapper {
+  padding-bottom: .8rem;
   margin: 0 !important;
-  padding: 0;
 }
 
 input.example-right-align::-webkit-outer-spin-button,

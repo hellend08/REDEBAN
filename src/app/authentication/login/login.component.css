@@ -85,8 +85,8 @@
   display: none;
 }
 :host ::ng-deep .mat-form-field-wrapper {
-  margin: .5rem !important;
-  padding: 0;
+  padding-bottom: .8rem !important;
+  margin: .2rem;
 }
 
 .no-spacing {

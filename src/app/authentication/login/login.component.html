@@ -25,8 +25,8 @@
                 <p class="text-center" [formGroup]="form">
                     <mat-form-field appearance="outline" class="mx-5 w-75">
                         <mat-label>Ingresa tu contraseña</mat-label>
-                        <input formControlName="pass" type="password" matInput placeholder="Tu contraseña va aquí">
-                        <mat-error align="end" *ngIf="form.dirty">Ingrese max 10 dígitos</mat-error>
+                        <input formControlName="pass" type="password" maxlength="10" matInput placeholder="Tu contraseña va aquí">
+                        <mat-error align="end" *ngIf="form.dirty">Ingrese min 6 dígitos</mat-error>
                     </mat-form-field>
                 </p>
                 <p class="text-center">

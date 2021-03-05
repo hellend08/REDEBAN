@@ -8,7 +8,7 @@
             <p class="text-color pb-2 text-center">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
                 sint.
                 Velit officia consequat duis enim velit mollit. Exercitation veniam.</p>
-            <p class="text-center mb-3">
+            <p class="text-center mb-1">
                 <mat-form-field appearance="outline" class="w-100">
                     <mat-label>Contraseña anterior</mat-label>
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
@@ -17,7 +17,7 @@
                     <mat-error align="end" *ngIf="form.dirty">Debe ser diferente a la anterior</mat-error>
                 </mat-form-field>
             </p>
-            <p class="text-center mb-3">
+            <p class="text-center mb-1">
                 <mat-form-field appearance="outline" class="w-100">
                     <mat-label>Nueva contraseña</mat-label>
                     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">

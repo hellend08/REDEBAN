@@ -83,6 +83,6 @@
 } */
 
 :host ::ng-deep .mat-form-field-wrapper {
-  margin: 0 !important;
-  padding: 0;
+  padding-bottom: .9rem !important;
+  margin: 0;
 }

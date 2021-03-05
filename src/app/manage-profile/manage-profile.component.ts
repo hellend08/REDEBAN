@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogDeleteComponent} from '../dialog-delete/dialog-delete.component';
+
 
 export interface PeriodicElement {
   
@@ -31,6 +32,12 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class ManageProfileComponent implements OnInit {
   displayedColumns: string[] = ['profile', 'keyMin', 'keyMax', 'mayus', 'minus', 'number', 'specials', 'repeated', 'listBlack', 'lastPass', 'validity', 'start' ];
   dataSource = ELEMENT_DATA;
+  
+  // @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  // ngAfterViewInit() {
+  //   this.dataSource.paginator = this.paginator;
+  // }
 
   constructor(public dialog: MatDialog) { }
 

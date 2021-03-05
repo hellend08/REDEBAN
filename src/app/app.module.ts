@@ -40,6 +40,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './layout/components/header/header.component';
 import { DashboardLayoutComponent } from './layout/dashboard-layout/dashboard-layout.component';
 import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
+import { ManageUserComponent } from './manage-user/manage-user.component';
+import { EditModalComponent } from './edit-modal/edit-modal.component';
 // import {NgRecaptcha3Service} from 'ng-recaptcha3';
 
 @NgModule({
@@ -61,6 +63,8 @@ import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
     HeaderComponent,
     DashboardLayoutComponent,
     DialogDeleteComponent,
+    ManageUserComponent,
+    EditModalComponent,
    
   ],
   imports: [

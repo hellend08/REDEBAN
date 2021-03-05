@@ -14,6 +14,9 @@ import { SideBarComponent } from './layout/components/side-bar/side-bar.componen
 import { FooterComponent } from './layout/components/footer/footer.component';
 import { ManageRolesComponent } from './manage-roles/manage-roles.component';
 import { LayoutComponent } from './layout/layout.component';
+import { ManageUserComponent } from './manage-user/manage-user.component';
+import { EditModalComponent } from './edit-modal/edit-modal.component';
+
 import { DashboardLayoutComponent } from './layout/dashboard-layout/dashboard-layout.component';
 
 const routes: Routes = [
@@ -61,6 +64,10 @@ const routes: Routes = [
         path: 'new-user',
         component: NewUserComponent
       },
+      {
+        path: 'manage-user',
+        component: ManageUserComponent
+      },
     ]
   },
   {
@@ -96,6 +103,10 @@ const routes: Routes = [
   // { path: 'manage-roles', component: ManageRolesComponent },
   { path: 'side-bar', component: SideBarComponent },
   { path: 'footer', component: FooterComponent },
+  {
+    path: 'modal',
+    component: EditModalComponent
+  },
 
 ];
 

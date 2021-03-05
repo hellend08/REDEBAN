@@ -3,10 +3,10 @@
         <!-- <header class="mb-4">
             <img class="size-logo" src="assets/images/redeban.png" alt="logo-redeban">
         </header> -->
-        <div class="mx-auto w-50 pt-5 pb-3 bg-white px-5 rounded-lg" [formGroup]="form">
-            <h3 class="text-center text-color mb-3 mx-5 font-bold">Nuevo usuario</h3>
+        <div class="mx-auto w-50 pt-5 pb-3 bg-white px-5 rounded-lg" >
+            <h3 class="text-center text-color mb-3 mx-5 font-bold">Adminisración de Usuarios</h3>
             <p class="text-color pb-2 text-center">Crea un nuevo usuario.</p>
-            <p class="text-center mb-1">
+            <!-- <p class="text-center mb-2">
                 <mat-form-field appearance="outline" class="w-100">
                     <mat-label> Seleccionar perfil </mat-label>
                     <mat-select>
@@ -15,8 +15,8 @@
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
-            </p>
-            <p class="text-center mb-2">
+            </p> -->
+            <!-- <p class="text-center mb-4">
                 <mat-form-field appearance="outline" class="w-100">
                     <mat-label> Seleccionar Pertenencia </mat-label>
                     <mat-select>
@@ -25,15 +25,15 @@
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
-            </p>
-            <p class="text-center mb-1">
+            </p> -->
+            <!-- <p class="text-center mb-2">
                 <mat-form-field appearance="outline" class="w-100">
                     <mat-label>Nombre y Apellidos</mat-label>
                     <input formControlName="name" matInput placeholder="Tu contraseña va aquí">
-                    <mat-error align="left" *ngIf="form.dirty">Ingrese sus datos completos</mat-error>
+                    <mat-error *ngIf="form.dirty">Error</mat-error>
                 </mat-form-field>
-            </p>
-            <div class="example-container mb-1">
+            </p> -->
+            <!-- <div class="example-container mb-2">
                 <mat-form-field appearance="outline">
                     <mat-label>Tipo de Identificación</mat-label>
                     <mat-select>
@@ -45,38 +45,36 @@
                 <mat-form-field appearance="outline">
                     <mat-label>Número de Identificación</mat-label>
                     <input formControlName="number" type="tel" matInput #input maxlength="10" placeholder="">
-                    <mat-error align="right" *ngIf="form.dirty">Digite unicamente números</mat-error>
-                    <!-- <mat-hint>{{input.value?.length || 0}}/10</mat-hint> -->
+                    <mat-error *ngIf="form.dirty">Digite unicamente números</mat-error>
+                  
                 </mat-form-field>
-            </div>
-            <p class="text-center mb-1">
+            </div> -->
+              <!-- <mat-hint>{{input.value?.length || 0}}/10</mat-hint> -->
+            <!-- <p class="text-center mb-2">
                 <mat-form-field appearance="outline" class="w-100">
                     <mat-label>Correo electrónico</mat-label>
                     <input formControlName="email" type="email" matInput placeholder="johndoe@micomercio.com">
-                    <mat-error align="right" *ngIf="form.dirty">Ingrese correo electrónico válido</mat-error>
+                    <mat-error *ngIf="form.dirty">Ingrese correo electrónico válido</mat-error>
                 </mat-form-field>
-             </p>
-            <div class="example-container mb-2">
+             </p> -->
+            <!-- <div class="example-container mb-4">
                 <mat-form-field appearance="outline" class="input-phone">
                     <mat-label>Número celular</mat-label>
                     <span matPrefix>+57 &nbsp;</span>
                     <input formControlName="phone" type="tel" matInput #input maxlength="10" placeholder="555-555-5555">
-                    <mat-error align="right" *ngIf="form.dirty">Digite unicamente números</mat-error>
-                    <!-- <mat-hint>{{input.value?.length || 0}}/10</mat-hint> -->
+                    <mat-error *ngIf="form.dirty">Digite unicamente números</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
                     <mat-label class="user-disabled">Usuario:<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;3002448659</mat-label>
                     <input matInput placeholder="johndoe@micomercio.com" disabled>
-                    <!-- <mat-hint></mat-hint> -->
                 </mat-form-field>
-            </div>
-            <section class="form-check">
+            </div> -->
+            <!-- <section class="form-check">
                 <mat-checkbox class="example-margin">Administrador del Comercio</mat-checkbox>
                 <mat-checkbox class="example-margin">Administrador Comercial</mat-checkbox>
                 <mat-checkbox class="example-margin" [checked]="true" [disabled]="true">Ventas</mat-checkbox>
 
-                <!-- <mat-checkbox class="example-margin" [disabled]="true">Disabled</mat-checkbox> -->
-            </section>
+            </section> -->
             <div class="d-flex flex-row mt-4">
                 <p class="mr-8">
                     <a routerLink="/login">
@@ -87,8 +85,7 @@
                 <p>
                     <a routerLink="/">
                         <button mat-stroked-button class="w-50 color-gradient">CREAR
-                            <!-- <mat-icon matSuffix>keyboard_arrow_right
-                            </mat-icon> -->
+                         
                         </button>
                     </a>
                 </p>
