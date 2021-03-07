@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 
-
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
@@ -10,9 +9,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SideBarComponent implements OnInit {
   // @Input() menuItems: Array<{ icon: String, name: String }>;
   showFiller = true;
-  
 
   constructor() { }
+
+  // public mouseEvent(){
+  //   if('')
+  // }
 
   ngOnInit(): void {
   }

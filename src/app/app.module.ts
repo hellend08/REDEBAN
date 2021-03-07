@@ -42,6 +42,8 @@ import { DashboardLayoutComponent } from './layout/dashboard-layout/dashboard-la
 import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
 import { ManageUserComponent } from './manage-user/manage-user.component';
 import { EditModalComponent } from './edit-modal/edit-modal.component';
+import { FunctionalitiesComponent } from './functionalities/functionalities.component';
+import { FunctionalitiesRoleComponent } from './functionalities-role/functionalities-role.component';
 // import {NgRecaptcha3Service} from 'ng-recaptcha3';
 
 @NgModule({
@@ -65,6 +67,8 @@ import { EditModalComponent } from './edit-modal/edit-modal.component';
     DialogDeleteComponent,
     ManageUserComponent,
     EditModalComponent,
+    FunctionalitiesComponent,
+    FunctionalitiesRoleComponent,
    
   ],
   imports: [

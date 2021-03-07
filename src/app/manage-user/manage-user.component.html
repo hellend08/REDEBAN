@@ -1,11 +1,70 @@
 <div class="container p-4 justify-content-center">
-    <div class="text-center w-1/3 " style="min-width: 550px;">
+    <div class="text-center " style="min-width: 550px;">
         <!-- <header class="mb-4">
             <img class="size-logo" src="assets/images/redeban.png" alt="logo-redeban">
         </header> -->
-        <div class="mx-auto w-50 pt-5 pb-3 bg-white px-5 rounded-lg" >
+        <div class="mx-auto w-full pt-5 pb-3 bg-white px-5 rounded-lg" >
             <h3 class="text-center text-color mb-3 mx-5 font-bold">Adminisración de Usuarios</h3>
-            <p class="text-color pb-2 text-center">Crea un nuevo usuario.</p>
+            <p class="text-color pb-2 text-center">Crea, actualiza e inactiva usuarios.</p>
+            <div class="margin-xl mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource" >
+                    <ng-container matColumnDef="user">
+                        <th mat-header-cell *matHeaderCellDef>Usuario </th>
+                        <td mat-cell *matCellDef="let element"> {{element.user}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef>Tipo ID</th>
+                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="numberId">
+                        <th mat-header-cell *matHeaderCellDef>Identificación</th>
+                        <td mat-cell *matCellDef="let element"> {{element.numberId}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="phone">
+                        <th mat-header-cell *matHeaderCellDef>Celular</th>
+                        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="email">
+                        <th mat-header-cell *matHeaderCellDef>Email</th>
+                        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="profile">
+                        <th mat-header-cell *matHeaderCellDef>Perfil</th>
+                        <td mat-cell *matCellDef="let element"> {{element.profile}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="codPer">
+                        <th mat-header-cell *matHeaderCellDef>Código Pertenencia</th>
+                        <td mat-cell *matCellDef="let element"> {{element.codPer}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="namePer">
+                        <th mat-header-cell *matHeaderCellDef>Nombre Pertenencia</th>
+                        <td mat-cell *matCellDef="let element"> {{element.namePer}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="terminal">
+                        <th mat-header-cell *matHeaderCellDef>Terminal</th>
+                        <td mat-cell *matCellDef="let element"> {{element.terminal}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="active">
+                        <th mat-header-cell *matHeaderCellDef>Estado</th>
+                        <td mat-cell *matCellDef="let element"> {{element.active}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="info">
+                        <th mat-header-cell *matHeaderCellDef>Más info</th>
+                        <td mat-cell *matCellDef="let element">
+                            <a style="cursor: pointer;" >
+                                <mat-icon>account_box</mat-icon>
+                            </a>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator class="paginator" [pageSizeOptions]="[5, 10]" showFirstLastButtons></mat-paginator>
+            </div>
             <!-- <p class="text-center mb-2">
                 <mat-form-field appearance="outline" class="w-100">
                     <mat-label> Seleccionar perfil </mat-label>
@@ -84,7 +143,7 @@
                 </p>
                 <p>
                     <a routerLink="/">
-                        <button mat-stroked-button class="w-50 color-gradient">CREAR
+                        <button mat-stroked-button class="w-full">CREAR
                          
                         </button>
                     </a>
