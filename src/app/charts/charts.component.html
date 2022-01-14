@@ -1,7 +1,8 @@
 <div style="padding: 2rem 0">
   <div class="charts-top-bar">
     <div
-      class="charts-top-bar-card charts-top-bar-card--darken"
+      class="charts-top-bar-card"
+      [ngClass]="{'charts-top-bar-card--darken': chartType === 'amount'}"
       style="--max-width: 300px"
     >
       <h5 class="charts-top-bar-card__title">
@@ -13,6 +14,7 @@
     </div>
     <div
       class="charts-top-bar-card"
+      [ngClass]="{'charts-top-bar-card--darken': chartType === 'quantity'}"
       style="--max-width: 220px"
     >
       <h5 class="charts-top-bar-card__title">
@@ -24,13 +26,13 @@
     </div>
     <div
       class="charts-top-bar-card"
-      style="--max-width: 80px"
+      style="--max-width: 90px"
     >
       <mat-slide-toggle
         [checked]="currentDay"
         (change)="currentDayChange($event)"
       >
-        Incluir el<br>día actual
+        Incluir el día actual
       </mat-slide-toggle>
     </div>
     <mat-form-field

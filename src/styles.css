@@ -29,27 +29,30 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 }
 
 /* Charts */
-.charts-top-bar-card .mat-slide-toggle {
-  width: 100%;
-  height: unset;
-}
-
-.charts-top-bar-card .mat-slide-toggle-content {
-  font-size: 12px;
-  line-height: 1.2;
-  text-align: center;
-  margin-top: 12px;
-}
-
-.charts-top-bar-card .mat-slide-toggle-label {
-  margin-bottom: 0;
-  flex-direction: column;
-}
-
-.charts-top-bar-card .mat-slide-toggle-bar {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 1rem;
+@media screen and (min-width: 1024px) {
+  .charts-top-bar-card .mat-slide-toggle {
+    width: 100%;
+    height: unset;
+  }
+  
+  .charts-top-bar-card .mat-slide-toggle-content {
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 12px;
+    white-space: break-spaces;
+  }
+  
+  .charts-top-bar-card .mat-slide-toggle-label {
+    margin-bottom: 0;
+    flex-direction: column;
+  }
+  
+  .charts-top-bar-card .mat-slide-toggle-bar {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 1rem;
+  }
 }
 
 .charts-top-bar .mat-form-field-wrapper {

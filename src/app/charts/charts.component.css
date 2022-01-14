@@ -1,15 +1,30 @@
-.charts-top-bar {
+/* .charts-top-bar {
   display: flex;
   flex-wrap: wrap;
-  gap: 32px;
   align-items: center;
+} */
+.charts-top-bar {
+  display: grid;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .charts-top-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .charts-top-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
 }
 
 .charts-top-bar-card {
   /* max-width: var(--max-width); */
-  /* width: 100%; */
-  width: 50%;
-  height: 104px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,6 +34,13 @@
   font-weight: 300;
   color: #0033A1;
   /* margin-right: 32px; */
+}
+
+@media screen and (min-width: 1024px) {
+  .charts-top-bar-card {
+    max-width: var(--max-width);
+    height: 104px;
+  }
 }
 
 .charts-top-bar-card:last-child {
