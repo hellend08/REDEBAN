@@ -9,6 +9,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 
+/* Material button */
+.mat-raised-button {
+  line-height: 42px!important;
+}
+
+.mat-raised-button.mat-primary {
+  background-color: #0033A1;
+}
+
 /* Material slide toggles */
 .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb,
 .mat-slide-toggle.mat-checked .mat-ripple-element {

@@ -45,8 +45,18 @@
   margin: 1rem 0;
 }
 
+.charts-content__title {
+  font-size: 18px;
+  color: #00339F;
+  line-height: 1.2;
+  text-align: center;
+}
+
 .charts-footer {
   padding: 1rem;
   background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.15);
 }
