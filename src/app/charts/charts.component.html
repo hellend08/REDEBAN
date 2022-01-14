@@ -41,7 +41,7 @@
     >
       <mat-select
         [(value)]="chartType"
-        (selectionChange)="chartTypeChange($event)"
+        (selectionChange)="chartTypeChange($event); "
       >
         <mat-option value="amount">
           Gráfico de Monto
@@ -52,9 +52,37 @@
       </mat-select>
     </mat-form-field>
   </div>
+
+  <div class="charts-content" *ngIf="loader">
+    <ngx-skeleton-loader count="1" appearance="line" 
+    [theme]="{ 
+      'width': '550px',
+      'border-radius': '5px',
+      'display': 'flex',
+      'justify-content': 'center',
+      'margin-inline': 'auto'
+    }"></ngx-skeleton-loader>
+    <ngx-skeleton-loader count="7" appearance="line" 
+    [theme]="{ 
+      'width': '95%',
+      'height': '70px',
+      'border-radius': '5px',
+      'display': 'flex',
+      'justify-content': 'center',
+      'margin-inline': 'auto'
+    }"></ngx-skeleton-loader>
+    <ngx-skeleton-loader count="1" appearance="line" 
+    [theme]="{ 
+      'width': '250px',
+      'border-radius': '5px',
+      'display': 'flex',
+      'justify-content': 'center',
+      'margin-inline': 'auto'
+    }"></ngx-skeleton-loader>
+  </div>
   
-  <div class="charts-content">
-    <p class="charts-content__title">
+  <div class="charts-content" *ngIf="!loader">
+    <p class="charts-content__title" >
       {{ chartType === 'quantity' ? 'Cantidad' : 'Monto' }} - Ingresos de los últimos 7 días, desde 8/01/22 - 06/02/22
     </p>
     <app-line-chart

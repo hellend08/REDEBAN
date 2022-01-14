@@ -5,7 +5,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./charts.component.css']
 })
 export class ChartsComponent implements OnInit {
+
   constructor() { }
+
+  loader: boolean = true;
 
   currentDay = false;
   chartType = 'amount';
@@ -74,6 +77,10 @@ export class ChartsComponent implements OnInit {
       this.barChartData = resp.data
       this.barChartOptions = resp.options
     })
+
+    setTimeout(() => {
+      this.loader = false;
+    }, 2000);
   }
 
   getData(chartType: any): any {
@@ -100,12 +107,17 @@ export class ChartsComponent implements OnInit {
   }
 
   chartTypeChange(type: any): void {
+    this.loader = true;
     this.chartType = type.value
 
     this.getData(this.chartType).then((resp: any) => {
       this.barChartLabels = resp.labels
       this.barChartData = resp.data
       this.barChartOptions = resp.options
+     
     })
+    setTimeout(() => {
+      this.loader = false;
+    }, 2000);
   }
 }

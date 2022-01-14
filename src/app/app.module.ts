@@ -23,8 +23,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogModule} from '@angular/material/dialog';
 
 import { NgChartsModule } from 'ng2-charts';
-import {MatCardModule} from '@angular/material/card';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatCardModule } from '@angular/material/card';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { LayoutComponent } from './layout/layout.component';
 
@@ -59,7 +60,8 @@ import { LineChartComponent } from './line-chart/line-chart.component';
     ReactiveFormsModule,
     NgChartsModule,
     MatCardModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    NgxSkeletonLoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
