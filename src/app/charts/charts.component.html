@@ -26,7 +26,10 @@
       class="charts-top-bar-card"
       style="--max-width: 80px"
     >
-      <mat-slide-toggle>
+      <mat-slide-toggle
+        [checked]="currentDay"
+        (change)="currentDayChange($event)"
+      >
         Incluir el<br>día actual
       </mat-slide-toggle>
     </div>
@@ -34,7 +37,10 @@
       appearance="fill"
       style="margin-left: auto"
     >
-      <mat-select [(value)]="chartType">
+      <mat-select
+        [(value)]="chartType"
+        (selectionChange)="chartTypeChange($event)"
+      >
         <mat-option value="amount">
           Gráfico de Monto
         </mat-option>
@@ -47,19 +53,24 @@
   
   <div class="charts-content">
     <p class="charts-content__title">
-      Cantidad - Ingresos de los últimos 7 días, desde 8/01/22 - 06/02/22
+      {{ chartType === 'quantity' ? 'Cantidad' : 'Monto' }} - Ingresos de los últimos 7 días, desde 8/01/22 - 06/02/22
     </p>
-    <canvas baseChart
-      [datasets]="barChartData"
-      [labels]="barChartLabels"
-      [options]="barChartOptions"
-      [legend]="barChartLegend"
+    <app-line-chart
+      [barChartData]="barChartData"
+      [barChartLabels]="barChartLabels"
+      [barChartOptions]="barChartOptions"
+      [barChartLegend]="barChartLegend">
+    </app-line-chart>
+    <p
+      *ngIf="chartType === 'amount'"
+      class="charts-content__notes"
     >
-    </canvas>
+      *Valores aproximados en millones de pesos
+    </p>
   </div>
   
   <div class="charts-footer">
-    <a routerLink="/login">
+    <a routerLink="/">
       <button mat-raised-button mat-button color="primary">
         Ver Listado de Transacciones
       </button>

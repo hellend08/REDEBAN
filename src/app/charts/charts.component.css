@@ -1,11 +1,14 @@
 .charts-top-bar {
   display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
   align-items: center;
 }
 
 .charts-top-bar-card {
-  max-width: var(--max-width);
-  width: 100%;
+  /* max-width: var(--max-width); */
+  /* width: 100%; */
+  width: 50%;
   height: 104px;
   display: flex;
   flex-direction: column;
@@ -15,7 +18,7 @@
   border-radius: 12px;
   font-weight: 300;
   color: #0033A1;
-  margin-right: 32px;
+  /* margin-right: 32px; */
 }
 
 .charts-top-bar-card:last-child {
@@ -50,6 +53,12 @@
   color: #00339F;
   line-height: 1.2;
   text-align: center;
+}
+
+.charts-content__notes {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 1rem;
 }
 
 .charts-footer {
