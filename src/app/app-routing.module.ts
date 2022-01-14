@@ -17,6 +17,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { ManageUserComponent } from './manage-user/manage-user.component';
 import { EditModalComponent } from './edit-modal/edit-modal.component';
 
+import { ChartsComponent } from './charts/charts.component';
+
 import { DashboardLayoutComponent } from './layout/dashboard-layout/dashboard-layout.component';
 
 const routes: Routes = [
@@ -24,6 +26,10 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
+      {
+        path: 'charts',
+        component: ChartsComponent
+      },
       {
         path: '',
         redirectTo: 'login',

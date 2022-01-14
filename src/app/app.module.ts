@@ -22,6 +22,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogModule} from '@angular/material/dialog';
 
+import { NgChartsModule } from 'ng2-charts';
+import {MatCardModule} from '@angular/material/card';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
 
 import { LoginComponent } from './authentication/login/login.component';
 import { RecoverPasswordComponent } from './authentication/recover-password/recover-password.component';
@@ -46,6 +50,7 @@ import { FunctionalitiesComponent } from './functionalities/functionalities.comp
 import { FunctionalitiesRoleComponent } from './functionalities-role/functionalities-role.component';
 // import {NgRecaptcha3Service} from 'ng-recaptcha3';
 
+import { ChartsComponent } from './charts/charts.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,6 +74,7 @@ import { FunctionalitiesRoleComponent } from './functionalities-role/functionali
     EditModalComponent,
     FunctionalitiesComponent,
     FunctionalitiesRoleComponent,
+    ChartsComponent,
    
   ],
   imports: [
@@ -90,7 +96,10 @@ import { FunctionalitiesRoleComponent } from './functionalities-role/functionali
     MatPaginatorModule,
     MatSidenavModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgChartsModule,
+    MatCardModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

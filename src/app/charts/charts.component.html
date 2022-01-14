@@ -1,0 +1,65 @@
+<div style="padding: 2rem 0">
+  <div class="charts-top-bar">
+    <div
+      class="charts-top-bar-card charts-top-bar-card--darken"
+      style="--max-width: 300px"
+    >
+      <h5 class="charts-top-bar-card__title">
+        Total monto
+      </h5>
+      <span class="charts-top-bar-card__value">
+        $ 11,850,656.35
+      </span>
+    </div>
+    <div
+      class="charts-top-bar-card"
+      style="--max-width: 220px"
+    >
+      <h5 class="charts-top-bar-card__title">
+        Total cantidad
+      </h5>
+      <span class="charts-top-bar-card__value">
+        46,656
+      </span>
+    </div>
+    <div
+      class="charts-top-bar-card"
+      style="--max-width: 80px"
+    >
+      <mat-slide-toggle>
+        Incluir el<br>día actual
+      </mat-slide-toggle>
+    </div>
+    <mat-form-field
+      appearance="fill"
+      style="margin-left: auto"
+    >
+      <mat-select [(value)]="chartType">
+        <mat-option value="amount">
+          Gráfico de Monto
+        </mat-option>
+        <mat-option value="quantity">
+          Gráfico de Cantidad
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  
+  <div class="charts-content">
+    <canvas baseChart
+      [datasets]="barChartData"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [legend]="barChartLegend"
+    >
+    </canvas>
+  </div>
+  
+  <div class="charts-footer">
+    <a routerLink="/login">
+      <button mat-raised-button mat-button color="primary">
+        Ver Listado de Transacciones
+      </button>
+    </a>
+  </div>
+</div>
