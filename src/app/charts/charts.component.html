@@ -43,11 +43,11 @@
         [(value)]="chartType"
         (selectionChange)="chartTypeChange($event); "
       >
-        <mat-option value="amount">
-          Gráfico de Monto
+        <mat-option value="amount" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay" matTooltipPosition="right">
+          Valor en Ventas
         </mat-option>
-        <mat-option value="quantity">
-          Gráfico de Cantidad
+        <mat-option value="quantity" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay" matTooltipPosition="right">
+          Cantidad de Ventas
         </mat-option>
       </mat-select>
     </mat-form-field>

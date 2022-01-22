@@ -21,6 +21,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { NgChartsModule } from 'ng2-charts';
 import { MatCardModule } from '@angular/material/card';
@@ -61,7 +62,8 @@ import { LineChartComponent } from './line-chart/line-chart.component';
     NgChartsModule,
     MatCardModule,
     MatSlideToggleModule,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChartsComponent implements OnInit {
 
+  showDelay = 700;
+
   constructor() { }
 
   loader: boolean = true;
