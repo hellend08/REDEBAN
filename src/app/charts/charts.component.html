@@ -1,69 +1,112 @@
 <div style="padding: 2rem 0">
   <div class="charts-top-bar">
-    <div
-      class="charts-top-bar-card"
-      [ngClass]="{'charts-top-bar-card--darken': chartType === 'amount'}"
-      style="--max-width: 300px"
-    >
-      <h5 class="charts-top-bar-card__title">
-        Total monto
-      </h5>
-      <span class="charts-top-bar-card__value">
-        $ 11,850,656.35
-      </span>
+    <div class="charts-top-bar" style="width: 700px;" *ngIf="topCards">
+      <div class="charts-top-bar-card" [ngClass]="{'charts-top-bar-card--darken': chartType === 'amount'}"
+        style="--max-width: 300px">
+        <h5 class="charts-top-bar-card__title">
+          Total monto
+        </h5>
+        <span class="charts-top-bar-card__value">
+          $ 11,850,656.35
+        </span>
+      </div>
+      <div class="charts-top-bar-card" [ngClass]="{'charts-top-bar-card--darken': chartType === 'quantity'}"
+        style="--max-width: 220px">
+        <h5 class="charts-top-bar-card__title">
+          Total cantidad
+        </h5>
+        <span class="charts-top-bar-card__value">
+          46,656
+        </span>
+      </div>
+      <div class="charts-top-bar-card" style="--max-width: 90px">
+        <mat-slide-toggle [checked]="currentDay" (change)="currentDayChange($event)">
+          Incluir el día actual
+        </mat-slide-toggle>
+      </div>
     </div>
-    <div
-      class="charts-top-bar-card"
-      [ngClass]="{'charts-top-bar-card--darken': chartType === 'quantity'}"
-      style="--max-width: 220px"
-    >
-      <h5 class="charts-top-bar-card__title">
-        Total cantidad
-      </h5>
-      <span class="charts-top-bar-card__value">
-        46,656
-      </span>
+    <div class="charts-top-bar" style="width: 850px;" *ngIf="!topCards">
+      <div class="charts-top-bar-card"
+        style="--max-width: 190px">
+        <h5 class="charts-top-line-card__title">
+          Total de registrados
+        </h5>
+        <span class="charts-top-line-card__value">
+          112,850,65
+        </span>
+      </div>
+      <div class="charts-top-bar-card"
+        style="--max-width: 170px">
+        <h5 class="charts-top-line-card__title">
+          Total de activos
+        </h5>
+        <span class="charts-top-line-card__value">
+          46,656
+        </span>
+      </div>
+      <div class="charts-top-bar-card"
+        style="--max-width: 170px">
+        <h5 class="charts-top-line-card__title">
+          Total de Inactivos
+        </h5>
+        <span class="charts-top-line-card__value">
+          46,656
+        </span>
+      </div>
+      <div class="charts-top-bar-card"
+        style="--max-width: 170px">
+        <h5 class="charts-top-line-card__title">
+          Total de retirados
+        </h5>
+        <span class="charts-top-line-card__value">
+          46,656
+        </span>
+      </div>
+      <div class="charts-top-bar-card" style="--max-width: 80px; padding-inline: .8rem;">
+        <mat-slide-toggle [checked]="currentDay" (change)="currentDayChange($event)">
+          Incluir el día actual
+        </mat-slide-toggle>
+      </div>
     </div>
-    <div
-      class="charts-top-bar-card"
-      style="--max-width: 90px"
-    >
-      <mat-slide-toggle
-        [checked]="currentDay"
-        (change)="currentDayChange($event)"
-      >
-        Incluir el día actual
-      </mat-slide-toggle>
-    </div>
-    <mat-form-field
-      appearance="fill"
-      style="margin-left: auto"
-    >
-      <mat-select
-        [(value)]="chartType"
-        (selectionChange)="chartTypeChange($event); "
-      >
-        <mat-option value="amount" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay" matTooltipPosition="right">
+    <mat-form-field appearance="fill" style="margin-left: auto">
+      <mat-select [(value)]="chartType" (selectionChange)="chartTypeChange($event); ">
+        <mat-option value="amount" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
+          matTooltipPosition="right">
           Valor en Ventas
         </mat-option>
-        <mat-option value="quantity" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay" matTooltipPosition="right">
+        <mat-option value="quantity" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
+          matTooltipPosition="right">
           Cantidad de Ventas
+        </mat-option>
+        <mat-option value="registry" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
+          matTooltipPosition="right">
+          Comercios Registrados
+        </mat-option>
+        <mat-option value="active" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
+          matTooltipPosition="right">
+          Comercios Activos
+        </mat-option>
+        <mat-option value="inactive" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
+          matTooltipPosition="right">
+          Comercios Inactivos
+        </mat-option>
+        <mat-option value="retirement" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
+          matTooltipPosition="right">
+          Comercios Retirados
         </mat-option>
       </mat-select>
     </mat-form-field>
   </div>
 
   <div class="charts-content" *ngIf="loader">
-    <ngx-skeleton-loader count="1" appearance="line" 
-    [theme]="{ 
+    <ngx-skeleton-loader count="1" appearance="line" [theme]="{ 
       'width': '550px',
       'border-radius': '5px',
       'display': 'flex',
       'justify-content': 'center',
       'margin-inline': 'auto'
     }"></ngx-skeleton-loader>
-    <ngx-skeleton-loader count="7" appearance="line" 
-    [theme]="{ 
+    <ngx-skeleton-loader count="7" appearance="line" [theme]="{ 
       'width': '95%',
       'height': '70px',
       'border-radius': '5px',
@@ -71,8 +114,7 @@
       'justify-content': 'center',
       'margin-inline': 'auto'
     }"></ngx-skeleton-loader>
-    <ngx-skeleton-loader count="1" appearance="line" 
-    [theme]="{ 
+    <ngx-skeleton-loader count="1" appearance="line" [theme]="{ 
       'width': '250px',
       'border-radius': '5px',
       'display': 'flex',
@@ -80,25 +122,31 @@
       'margin-inline': 'auto'
     }"></ngx-skeleton-loader>
   </div>
-  
-  <div class="charts-content" *ngIf="!loader">
-    <p class="charts-content__title" >
-      {{ chartType === 'quantity' ? 'Cantidad' : 'Monto' }} - Ingresos de los últimos 7 días, desde 8/01/22 - 06/02/22
+
+  <div class="charts-content" *ngIf="!loader && topCards">
+    <p class="charts-content__title">
+      {{ chartType === 'quantity' ? 'Cantidad - Ingreso' : 'Monto - Ingreso' }} de los últimos 7 días, desde 8/01/22 - 06/02/22
     </p>
-    <app-line-chart
-      [barChartData]="barChartData"
-      [barChartLabels]="barChartLabels"
-      [barChartOptions]="barChartOptions"
+    <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels" [barChartOptions]="barChartOptions"
       [barChartLegend]="barChartLegend">
-    </app-line-chart>
-    <p
-      *ngIf="chartType === 'amount'"
-      class="charts-content__notes"
-    >
+    </app-bar-chart>
+    <p *ngIf="chartType === 'amount'" class="charts-content__notes">
       *Valores aproximados en millones de pesos
     </p>
   </div>
-  
+
+  <div class="charts-content" *ngIf="!loader && !topCards">
+    <p class="charts-content__title">
+      {{ chartType === 'registry' ? 'Registro de comercios' : 'Comercios activos' }} de los últimos 7 días, desde 8/01/22 - 06/02/22
+    </p>
+    <app-line-chart [lineChartType]="lineChartType" [lineChartData]="lineChartData" [lineChartLabels]="lineChartLabels"
+      [lineChartOptions]="lineChartOptions" [lineChartLegend]="lineChartLegend">
+    </app-line-chart>
+    <p *ngIf="chartType === 'amount'" class="charts-content__notes">
+      *Valores aproximados en millones de pesos
+    </p>
+  </div>
+
   <div class="charts-footer">
     <a routerLink="/">
       <button mat-raised-button mat-button color="primary">

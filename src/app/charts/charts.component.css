@@ -10,9 +10,10 @@
 }
 
 @media screen and (min-width: 1024px) {
+  
   .charts-top-bar {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     align-items: center;
   }
 }
@@ -30,6 +31,7 @@
 }
 
 @media screen and (min-width: 1024px) {
+
   .charts-top-bar-card {
     max-width: var(--max-width);
     height: 104px;
@@ -51,8 +53,23 @@
   border-bottom: 1px solid #0033A1;
 }
 
+.charts-top-line-card__title {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  border-bottom: 1px solid #0033A1;
+}
+
 .charts-top-bar-card__value {
   font-size: 36px;
+  text-align: right;
+  font-weight: 300;
+}
+
+.charts-top-line-card__value {
+  font-size: 26px;
+  text-align: right;
+  font-weight: 500;
 }
 
 .charts-content {

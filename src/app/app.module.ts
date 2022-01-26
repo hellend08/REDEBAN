@@ -32,12 +32,14 @@ import { LayoutComponent } from './layout/layout.component';
 
 import { ChartsComponent } from './charts/charts.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     ChartsComponent,
     LineChartComponent,
+    BarChartComponent,
    
   ],
   imports: [

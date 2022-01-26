@@ -1,11 +1,9 @@
-
-<!-- <div [ngClass]="{'hidden' : loader}"> -->
 <canvas
   baseChart
-  [datasets]="barChartData"
-  [labels]="barChartLabels"
-  [options]="barChartOptions"
-  [legend]="barChartLegend"
+  [datasets]="lineChartData"
+  [labels]="lineChartLabels"
+  [options]="lineChartOptions"
+  [legend]="lineChartLegend"
+  [type]="lineChartType"
   (chartClick)="chartItemClicked($event)">
 </canvas>
-<!-- </div> -->

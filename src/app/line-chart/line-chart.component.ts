@@ -6,10 +6,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./line-chart.component.css']
 })
 export class LineChartComponent implements OnInit {
-  @Input() barChartData: any;
-  @Input() barChartLabels: any;
-  @Input() barChartOptions: any;
-  @Input() barChartLegend: any;
+
+  @Input() lineChartType: any;
+  @Input() lineChartData: any;
+  @Input() lineChartLabels: any;
+  @Input() lineChartOptions: any;
+  @Input() lineChartLegend: any;
 
   constructor() { }
   
