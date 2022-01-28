@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+
 @Component({
-  selector: 'app-charts',
-  templateUrl: './charts.component.html',
-  styleUrls: ['./charts.component.css']
+  selector: 'app-dashboard-comercio',
+  templateUrl: './dashboard-comercio.component.html',
+  styleUrls: ['./dashboard-comercio.component.css']
 })
-export class ChartsComponent implements OnInit {
+export class DashboardComercioComponent implements OnInit {
 
   showDelay = 700;
   loader: boolean = true;
@@ -121,4 +122,5 @@ export class ChartsComponent implements OnInit {
       this.loader = false;
     }, 2000);
   }
+  
 }

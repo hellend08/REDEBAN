@@ -33,6 +33,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { ChartsComponent } from './charts/charts.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { DashboardBancoComponent } from './dashboard-banco/dashboard-banco.component';
+import { DashboardComercioComponent } from './dashboard-comercio/dashboard-comercio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +42,8 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
     ChartsComponent,
     LineChartComponent,
     BarChartComponent,
+    DashboardBancoComponent,
+    DashboardComercioComponent,
    
   ],
   imports: [

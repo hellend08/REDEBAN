@@ -1,0 +1,90 @@
+.charts-top-bar {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .charts-top-bar {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    
+    .charts-top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+  }
+  
+  .charts-top-bar-card {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #D2E1FF;
+    padding: .8rem 1rem;
+    border-radius: 12px;
+    font-weight: 300;
+    color: #0033A1;
+  }
+  
+  @media screen and (min-width: 1024px) {
+  
+    .charts-top-bar-card {
+      max-width: var(--max-width);
+      height: 104px;
+    }
+  }
+  
+  .charts-top-bar-card:last-child {
+    margin-left: 0;
+  }
+  
+  .charts-top-bar-card--darken {
+    background-color: #ADC7FF;
+  }
+  
+  .charts-top-bar-card__title {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    border-bottom: 1px solid #0033A1;
+  }
+  
+  .charts-top-bar-card__value {
+    font-size: 36px;
+    text-align: right;
+    font-weight: 300;
+  }
+  
+  .charts-content {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    background: #FFFFFF;
+    padding: 1rem .5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+  }
+  
+  .charts-content__title {
+    font-size: 18px;
+    color: #00339F;
+    line-height: 1.2;
+    text-align: center;
+  }
+  
+  .charts-content__notes {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 1rem;
+  }
+  
+  .charts-footer {
+    padding: 1rem;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.15);
+  }

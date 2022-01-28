@@ -1,6 +1,6 @@
 <div style="padding: 2rem 0">
   <div class="charts-top-bar">
-    <div class="charts-top-bar" style="width: 700px;" *ngIf="topCards">
+    <div class="charts-top-bar" style="width: 700px;">
       <div class="charts-top-bar-card" [ngClass]="{'charts-top-bar-card--darken': chartType === 'amount'}"
         style="--max-width: 300px">
         <h5 class="charts-top-bar-card__title">
@@ -25,7 +25,7 @@
         </mat-slide-toggle>
       </div>
     </div>
-    <div class="charts-top-bar" style="width: 850px;" *ngIf="!topCards">
+    <!-- <div class="charts-top-bar" style="width: 850px;" *ngIf="!topCards">
       <div class="charts-top-bar-card"
         style="--max-width: 190px">
         <h5 class="charts-top-line-card__title">
@@ -67,7 +67,7 @@
           Incluir el día actual
         </mat-slide-toggle>
       </div>
-    </div>
+    </div> -->
     <mat-form-field appearance="fill" style="margin-left: auto">
       <mat-select [(value)]="chartType" (selectionChange)="chartTypeChange($event); ">
         <mat-option value="amount" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
@@ -78,7 +78,7 @@
           matTooltipPosition="right">
           Cantidad de Ventas
         </mat-option>
-        <mat-option value="registry" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
+        <!-- <mat-option value="registry" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
           matTooltipPosition="right">
           Comercios Registrados
         </mat-option>
@@ -93,7 +93,7 @@
         <mat-option value="retirement" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
           matTooltipPosition="right">
           Comercios Retirados
-        </mat-option>
+        </mat-option> -->
       </mat-select>
     </mat-form-field>
   </div>
@@ -123,25 +123,13 @@
     }"></ngx-skeleton-loader>
   </div>
 
-  <div class="charts-content" *ngIf="!loader && topCards">
+  <div class="charts-content" *ngIf="!loader">
     <p class="charts-content__title">
-      {{ chartType === 'quantity' ? 'Cantidad - Ingreso' : 'Monto - Ingreso' }} de los últimos 7 días, desde 8/01/22 - 06/02/22
+      {{ chartType === 'quantity' ? 'Cantidad' : 'Monto' }} - Ingreso de los últimos 7 días, desde 8/01/22 - 06/02/22
     </p>
     <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels" [barChartOptions]="barChartOptions"
       [barChartLegend]="barChartLegend">
     </app-bar-chart>
-    <p *ngIf="chartType === 'amount'" class="charts-content__notes">
-      *Valores aproximados en millones de pesos
-    </p>
-  </div>
-
-  <div class="charts-content" *ngIf="!loader && !topCards">
-    <p class="charts-content__title">
-      {{ chartType === 'registry' ? 'Registro de comercios' : 'Comercios activos' }} de los últimos 7 días, desde 8/01/22 - 06/02/22
-    </p>
-    <app-line-chart [lineChartType]="lineChartType" [lineChartData]="lineChartData" [lineChartLabels]="lineChartLabels"
-      [lineChartOptions]="lineChartOptions" [lineChartLegend]="lineChartLegend">
-    </app-line-chart>
     <p *ngIf="chartType === 'amount'" class="charts-content__notes">
       *Valores aproximados en millones de pesos
     </p>
