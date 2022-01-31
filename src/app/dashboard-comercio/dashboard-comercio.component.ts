@@ -34,6 +34,7 @@ export class DashboardComercioComponent implements OnInit {
   ];
 
   amountBarChartOptions = {
+    onClick: this.chartItemClicked,
     scaleShowVerticalLines: false,
     responsive: true,
     scales: {
@@ -46,6 +47,13 @@ export class DashboardComercioComponent implements OnInit {
       },
     },
   }
+
+  chartItemClicked(e: any){
+    console.log("🚀 ~ file: bar-chart.component.ts ~ line 17 ~ LineChartComponent ~ chartItemClicked ~ e", e)
+    // const { index, datasetIndex } = e.active[0]
+    // console.log(this.barChartData[datasetIndex].data[index])
+    // console.log(this.barChartData[datasetIndex].label)
+}
 
   quantityBarChartLabels = ['8 ene.', '9 ene.', '10 ene.', '11 ene.', '12 ene.', '13 ene.', '14 ene.', '15 ene.', '16 ene.', '17 ene.', '18 ene.', '19 ene.', '20 ene.', '21 ene.', '22 ene.', '23 ene.', '24 ene.', '25 ene.', '26 ene.', '27 ene.', '28 ene.', '29 ene.', '30 ene.', '31 ene.', '1 feb.', '2 feb.', '3 feb.', '4 feb.', '5 feb.', '6 feb.'];
   
