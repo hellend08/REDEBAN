@@ -23,7 +23,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
 
-import { NgChartsModule } from 'ng2-charts';
+import { ChartsModule } from 'ng2-charts';
 import { MatCardModule } from '@angular/material/card';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
@@ -65,7 +65,7 @@ import { DashboardComercioComponent } from './dashboard-comercio/dashboard-comer
     MatSidenavModule,
     MatDialogModule,
     ReactiveFormsModule,
-    NgChartsModule,
+    ChartsModule,
     MatCardModule,
     MatSlideToggleModule,
     NgxSkeletonLoaderModule,
