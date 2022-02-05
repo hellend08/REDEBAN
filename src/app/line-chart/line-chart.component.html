@@ -1,9 +1,11 @@
-<canvas
-  baseChart
-  [datasets]="lineChartData"
-  [labels]="lineChartLabels"
-  [options]="lineChartOptions"
-  [legend]="lineChartLegend"
-  [type]="lineChartType"
-  (chartClick)="chartItemClicked($event)">
-</canvas>
+<div>
+  <canvas
+    baseChart
+    [datasets]="lineChartData"
+    [labels]="lineChartLabels"
+    [options]="lineChartOptions"
+    [legend]="lineChartLegend"
+    [chartType]="lineChartType"
+    (chartClick)="chartItemClicked($event)">
+  </canvas>
+</div>

@@ -26,20 +26,26 @@ export class DashboardBancoComponent implements OnInit {
   
   registryLineChartData = [
     {
+      fill: false,
       label: 'Registros',
       data: [50, 100, 120, 100, 105, 200, 100, 75, 12, 300, 250, 150, 180, 200, 250, 270, 225, 150, 130, 80, 30, 12, 75, 180, 130, 195, 75, 30, 12],
-      backgroundColor: ['#00339F'],
-      pointBackgroundColor: ['#00339F'],
-      pointBorderColor: ['#00339F'],
-      pointHoverBackgroundColor: ['#00339F'],
-      pointHoverBorderColor: ['#00339F'],
-      borderColor: ['#00339F']
+      backgroundColor: '#00339F',
+      pointBackgroundColor: '#00339F',
+      pointBorderColor: '#00339F',
+      pointHoverBackgroundColor: '#00339F',
+      pointHoverBorderColor: '#00339F',
+      borderColor: '#00339F'
     },
   ];
 
   registryLineChartOptions = {
     // scaleShowVerticalLines: false,
     responsive: true,
+    elements: {
+      line: {
+          tension: 0
+      }
+    },
     scales: {
       y: {
         ticks: {
@@ -55,19 +61,25 @@ export class DashboardBancoComponent implements OnInit {
   
   activeLineChartData = [
     {
+      fill: false,
       label: 'Transacciones',
       data: [50, 100, 120, 100, 105, 200, 100, 75, 12, 300, 250, 150, 180, 200, 250, 270, 225, 150, 130, 80, 30, 12, 75, 180, 130, 195, 75, 30, 12],
-      backgroundColor: ['#00339F'],
-      pointBackgroundColor: ['#00339F'],
-      pointBorderColor: ['#00339F'],
-      pointHoverBackgroundColor: ['#00339F'],
-      pointHoverBorderColor: ['#00339F'],
-      borderColor: ['#00339F']
+      backgroundColor: '#00339F',
+      pointBackgroundColor: '#00339F',
+      pointBorderColor: '#00339F',
+      pointHoverBackgroundColor: '#00339F',
+      pointHoverBorderColor: '#00339F',
+      borderColor: '#00339F'
     },
   ];
 
   activeLineChartOptions = {
     responsive: true,
+    elements: {
+      line: {
+          tension: 0
+      }
+    },
     scales: {
       y: {
         ticks: {
@@ -83,19 +95,25 @@ export class DashboardBancoComponent implements OnInit {
   
   inactiveLineChartData = [
     {
+      fill: false,
       label: 'Transacciones',
       data: [245, 250, 200, 186, 198, 150, 200, 220, 270, 100, 125, 170, 175, 140, 120, 110, 130, 170, 180, 215, 240, 245, 220, 155, 180, 170, 190, 240, 200, 0],
-      backgroundColor: ['#FF8019'],
-      pointBackgroundColor: ['#FF8019'],
-      pointBorderColor: ['#FF8019'],
-      pointHoverBackgroundColor: ['#FF8019'],
-      pointHoverBorderColor: ['#FF8019'],
-      borderColor: ['#FF8019']
+      backgroundColor: '#FF8019',
+      pointBackgroundColor: '#FF8019',
+      pointBorderColor: '#FF8019',
+      pointHoverBackgroundColor: '#FF8019',
+      pointHoverBorderColor: '#FF8019',
+      borderColor: '#FF8019'
     },
   ];
 
   inactiveLineChartOptions = {
     responsive: true,
+    elements: {
+      line: {
+          tension: 0
+      }
+    },
     scales: {
       y: {
         ticks: {
@@ -111,19 +129,25 @@ export class DashboardBancoComponent implements OnInit {
   
   retirementLineChartData = [
     {
+      fill: false,
       label: 'Transacciones',
       data: [100, 90, 75, 70, 75, 70, 50, 80, 85, 100, 20, 40, 60, 65, 50, 40, 30, 45, 60, 70, 80, 100, 102, 80, 53, 70, 60, 80, 98, 100, 75, 300],
-      backgroundColor: ['#64DFDF'],
-      pointBackgroundColor: ['#64DFDF'],
-      pointBorderColor: ['#64DFDF'],
-      pointHoverBackgroundColor: ['#64DFDF'],
-      pointHoverBorderColor: ['#64DFDF'],
-      borderColor: ['#64DFDF']
+      backgroundColor: '#64DFDF',
+      pointBackgroundColor: '#64DFDF',
+      pointBorderColor: '#64DFDF',
+      pointHoverBackgroundColor: '#64DFDF',
+      pointHoverBorderColor: '#64DFDF',
+      borderColor: '#64DFDF'
     },
   ];
 
   retirementLineChartOptions = {
     responsive: true,
+    elements: {
+      line: {
+          tension: 0
+      }
+    },
     scales: {
       y: {
         ticks: {
@@ -195,8 +219,11 @@ export class DashboardBancoComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData(this.chartType).then((resp: any) => {
+      const colors = this.getColors(resp.data[0])
+      const data = this.updateDataColors(resp.data, colors)
+
       this.barChartLabels = resp.labels
-      this.barChartData = resp.data
+      this.barChartData = data
       this.barChartOptions = resp.options
 
     })
@@ -255,18 +282,59 @@ export class DashboardBancoComponent implements OnInit {
     console.log("🚀 ~ file: charts.component.ts ~ line 71 ~ ChartsComponent ~ currentDayChange ~ value", value)
   }
 
+  getColors(data: any): any  {
+    const firstColor = data.backgroundColor[0]
+    const secondColor = data.backgroundColor[1]
+    const firstColorHover = data.hoverBackgroundColor[0]
+    const secondColorHover = data.hoverBackgroundColor[1]
+    
+    const backgroundColor = []
+    const hoverBackgroundColor = []
+    const borderColor = []
+
+    for(let i = 0; i < data.data.length; i++) {
+      backgroundColor.push(i%2 === 0 ? firstColor : secondColor)
+      hoverBackgroundColor.push(i%2 === 0 ? firstColorHover : secondColorHover)
+      borderColor.push(i%2 === 0 ? firstColor : secondColor)
+    }
+
+    return {
+      backgroundColor,
+      hoverBackgroundColor,
+      borderColor
+    }
+  }
+
+  updateDataColors(data: any, colors: any): any {
+    const newData = JSON.parse(JSON.stringify(data))
+    newData[0].backgroundColor = colors.backgroundColor
+    newData[0].hoverBackgroundColor = colors.hoverBackgroundColor
+    newData[0].borderColor = colors.borderColor
+
+    return newData
+  }
+
   chartTypeChange(type: any): void {
     this.loader = true;
     this.chartType = type.value
     this.topCards;
 
     this.getData(this.chartType).then((resp: any) => {
+      let data = null
+
+      if (this.chartType === 'amount' || this.chartType === 'quantity') {
+        const colors = this.getColors(resp.data[0])
+        data = this.updateDataColors(resp.data, colors)
+      } else {
+        data = resp.data
+      }
+
       this.barChartLabels = resp.labels
-      this.barChartData = resp.data
+      this.barChartData = data
       this.barChartOptions = resp.options
 
       this.lineChartLabels = resp.labels
-      this.lineChartData = resp.data
+      this.lineChartData = data
       this.lineChartOptions = resp.options
      
     })

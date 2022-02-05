@@ -112,8 +112,11 @@ export class DashboardComercioComponent implements OnInit {
 
   ngOnInit(): void {
     this.getData(this.chartType).then((resp: any) => {
+      const colors = this.getColors(resp.data[0])
+      const data = this.updateDataColors(resp.data, colors)
+
       this.barChartLabels = resp.labels
-      this.barChartData = resp.data
+      this.barChartData = data
       this.barChartOptions = resp.options
 
     })
@@ -145,13 +148,48 @@ export class DashboardComercioComponent implements OnInit {
     console.log("🚀 ~ file: charts.component.ts ~ line 71 ~ ChartsComponent ~ currentDayChange ~ value", value)
   }
 
+  getColors(data: any): any  {
+    const firstColor = data.backgroundColor[0]
+    const secondColor = data.backgroundColor[1]
+    const firstColorHover = data.hoverBackgroundColor[0]
+    const secondColorHover = data.hoverBackgroundColor[1]
+    
+    const backgroundColor = []
+    const hoverBackgroundColor = []
+    const borderColor = []
+
+    for(let i = 0; i < data.data.length; i++) {
+      backgroundColor.push(i%2 === 0 ? firstColor : secondColor)
+      hoverBackgroundColor.push(i%2 === 0 ? firstColorHover : secondColorHover)
+      borderColor.push(i%2 === 0 ? firstColor : secondColor)
+    }
+
+    return {
+      backgroundColor,
+      hoverBackgroundColor,
+      borderColor
+    }
+  }
+
+  updateDataColors(data: any, colors: any): any {
+    const newData = JSON.parse(JSON.stringify(data))
+    newData[0].backgroundColor = colors.backgroundColor
+    newData[0].hoverBackgroundColor = colors.hoverBackgroundColor
+    newData[0].borderColor = colors.borderColor
+
+    return newData
+  }
+
   chartTypeChange(type: any): void {
     this.loader = true;
     this.chartType = type.value
 
     this.getData(this.chartType).then((resp: any) => {
+      const colors = this.getColors(resp.data[0])
+      const data = this.updateDataColors(resp.data, colors)
+
       this.barChartLabels = resp.labels
-      this.barChartData = resp.data
+      this.barChartData = data
       this.barChartOptions = resp.options
 
     })

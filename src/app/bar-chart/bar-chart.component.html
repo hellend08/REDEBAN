@@ -1,8 +1,11 @@
-<canvas
-  baseChart
-  [datasets]="barChartData"
-  [labels]="barChartLabels"
-  [options]="barChartOptions"
-  [legend]="barChartLegend">
-  <!-- (chartClick)="chartItemClicked($event)" -->
-</canvas>
+<div>
+  <canvas
+    baseChart
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    chartType="bar"
+    [legend]="barChartLegend">
+    <!-- (chartClick)="chartItemClicked($event)" -->
+  </canvas>
+</div>
