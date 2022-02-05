@@ -11,6 +11,7 @@ export class BarChartComponent implements OnInit {
   @Input() barChartLabels: any;
   @Input() barChartOptions: any;
   @Input() barChartLegend: any;
+  // @Input() stacked: boolean;
 
   constructor() { }
 

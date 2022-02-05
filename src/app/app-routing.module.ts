@@ -6,6 +6,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { ChartsComponent } from './charts/charts.component';
 import { DashboardBancoComponent } from './dashboard-banco/dashboard-banco.component';
 import { DashboardComercioComponent } from './dashboard-comercio/dashboard-comercio.component';
+import { DashboardRedebanComponent } from './dashboard-redeban/dashboard-redeban.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,10 @@ const routes: Routes = [
       {
         path: 'banco',
         component: DashboardBancoComponent
+      },
+      {
+        path: 'redeban',
+        component: DashboardRedebanComponent
       },
     ]
   }
