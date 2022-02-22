@@ -1,6 +1,17 @@
 <div class="relative">
+  <mat-drawer-container class="example-container" autosize  hasBackdrop="false">
+    <mat-drawer #drawer class="example-sidenav" mode="over" position="end">
+      <p>Auto-resizing sidenav</p>
+      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+      <button (click)="showFiller = !showFiller" mat-raised-button>
+        Toggle extra text
+      </button>
+    </mat-drawer>
+  
     <div class="container">
       <router-outlet></router-outlet>
     </div>
-  </div>
+</mat-drawer-container>
+</div>
+
   

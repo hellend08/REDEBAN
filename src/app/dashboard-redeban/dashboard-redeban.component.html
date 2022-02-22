@@ -1,14 +1,91 @@
 
-<div class="charts-content" >
-    <!-- *ngIf="!loader" -->
-    <!-- <p class="charts-content__title">
-        {{ chartType === 'quantity' ? 'Cantidad' : 'Monto' }} - Ingreso de los últimos 7 días, desde 8/01/22 -
-        06/02/22
-    </p> -->
-    <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
-        [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend">
-    </app-bar-chart>
-    <!-- <p *ngIf="chartType === 'amount'" class="charts-content__notes">
-        *Valores aproximados en millones de pesos
-    </p> -->
+    <!-- <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+      </button>
+    </div> -->
+  
+
+<div style="padding: 2rem 0">
+    <div class="charts-top-bar">
+        <div class="charts-top-bar-card" style="--max-width: 260px">
+            <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'amount'}" -->
+            <h5 class="charts-top-bar-card__title">
+                Total de personas
+            </h5>
+            <span class="charts-top-bar-card__value">
+                112.850
+            </span>
+        </div>
+        <div class="charts-top-bar-card" style="--max-width: 220px">
+            <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'quantity'}" -->
+            <h5 class="charts-top-bar-card__title">
+                Total de comercios
+            </h5>
+            <span class="charts-top-bar-card__value">
+                18.168
+            </span>
+        </div>
+        <div class="charts-top-bar-card" style="--max-width: 90px; margin-left: auto">
+            <mat-slide-toggle [checked]="currentDay">
+                <!-- (change)="currentDayChange($event)" -->
+                Incluye el día actual
+            </mat-slide-toggle>
+        </div>
+        <button mat-button color="primary" style="border: 1px solid #00339F; height: 45.5px; width: 109px;">
+            Filtrar
+            <mat-icon>filter_list</mat-icon>
+        </button>
+        <mat-form-field appearance="fill">
+            <mat-select [(value)]="chartType">
+                <!-- (selectionChange)="chartTypeChange($event); " -->
+                <mat-option value="amount" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
+                    matTooltipPosition="right">
+                    Clientes
+                </mat-option>
+                <mat-option value="quantity" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
+                    matTooltipPosition="right">
+                    Transacciones
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <!-- <div class="charts-content" *ngIf="loader">
+        <ngx-skeleton-loader count="1" appearance="line" [theme]="{ 
+        'width': '550px',
+        'border-radius': '5px',
+        'display': 'flex',
+        'justify-content': 'center',
+        'margin-inline': 'auto'
+      }"></ngx-skeleton-loader>
+        <ngx-skeleton-loader count="6" appearance="line" [theme]="{ 
+        'width': '95%',
+        'height': '68px',
+        'border-radius': '5px',
+        'display': 'flex',
+        'justify-content': 'center',
+        'margin-inline': 'auto'
+      }"></ngx-skeleton-loader>
+        <ngx-skeleton-loader count="1" appearance="line" [theme]="{ 
+        'width': '250px',
+        'border-radius': '5px',
+        'display': 'flex',
+        'justify-content': 'center',
+        'margin-inline': 'auto'
+      }"></ngx-skeleton-loader>
+    </div> -->
+    <div class="container">
+        <div class="charts-content">
+            <!-- <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
+            [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend">
+        </app-bar-chart> -->
+        </div>
+        <div class="charts-content">
+            <!-- <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
+            [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend">
+        </app-bar-chart> -->
+        </div>
+
+    </div>
+
 </div>

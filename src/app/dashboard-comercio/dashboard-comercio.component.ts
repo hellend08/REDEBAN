@@ -30,8 +30,8 @@ export class DashboardComercioComponent implements OnInit {
       backgroundColor: ['#00339F', '#86AAF6'],
       hoverBackgroundColor: ['#2855B2', '#CADBFF'],
       borderColor: ['#00339F', '#86AAF6'],
-      hoverBorderWidth: 3,
-      hoverBorderColor: 'red',
+      // hoverBorderWidth: 3,
+      // hoverBorderColor: 'red',
     },
   ];
 
@@ -52,16 +52,16 @@ export class DashboardComercioComponent implements OnInit {
 
   chartItemClicked(e: any){
     console.log("🚀 ~ file: bar-chart.component.ts ~ line 17 ~ LineChartComponent ~ chartItemClicked ~ e", e)
-    const { tooltip, datasetIndex } = e.chart;
-    console.log(tooltip, datasetIndex)
-    const valueLabel = e.chart.tooltip.dataPoints[0].formattedValue;
-    console.log(valueLabel)
+    // const { tooltip, datasetIndex } = e.chart;
+    // console.log(tooltip, datasetIndex)
+    // const valueLabel = e.chart.tooltip.dataPoints[0].formattedValue;
+    // console.log(valueLabel)
 
-    const titleValue = e.chart.tooltip.title;
-    console.log(titleValue)
-    if(titleValue == '10 ene.') {
-      console.log('https://hellend08.github.io/redeban/banco');
-    }
+    // const titleValue = e.chart.tooltip.title;
+    // console.log(titleValue)
+    // if(titleValue == '10 ene.') {
+    //   console.log('https://hellend08.github.io/redeban/banco');
+    // }
 
     // console.log(e.chart.tooltip.dataPoints[0].formattedValue)
     // console.log(this.barChartData[datasetIndex].label)

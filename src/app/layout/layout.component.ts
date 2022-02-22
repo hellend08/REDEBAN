@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class LayoutComponent implements OnInit {
 
   headerLight: boolean = false;
+  showFiller = false;
+
 
 
   constructor(private router: Router) { 
