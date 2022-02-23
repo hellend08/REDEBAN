@@ -47,9 +47,9 @@
         'justify-content': 'center',
         'margin-inline': 'auto'
       }"></ngx-skeleton-loader>
-        <ngx-skeleton-loader count="6" appearance="line" [theme]="{ 
+        <ngx-skeleton-loader count="5" appearance="line" [theme]="{ 
         'width': '95%',
-        'height': '68px',
+        'height': '70px',
         'border-radius': '5px',
         'display': 'flex',
         'justify-content': 'center',
@@ -70,7 +70,7 @@
             06/02/22
         </p>
         <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
-            [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend">
+            [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend" [height]="height">
         </app-bar-chart>
         <p *ngIf="chartType === 'amount'" class="charts-content__notes">
             *Valores aproximados en millones de pesos

@@ -1,0 +1,57 @@
+.filter-container {
+    padding: 0 1.5rem;
+    width: 490px;
+}
+
+h5 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    color: #00339F;
+    letter-spacing: 0.2px;
+    margin-bottom: 0;
+}
+
+section {
+    padding: 1rem 0;
+    display: flex;
+}
+
+.top, .medium {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.low {
+    flex-direction: column;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+section p {
+    color: #000000;
+}
+
+.apply-filter {
+    margin-top: 13rem;
+}
+
+.apply-filter .btn-gradient{
+    width: 100%;
+    height: 45px;
+    border-radius: 12px;
+    color: #FFFFFF;
+    background: linear-gradient(
+    to right,
+    #db301c,
+    #41125d,
+    #241d75,
+    #053ca3,
+    #247ac0,
+    #4f964a
+  );
+}

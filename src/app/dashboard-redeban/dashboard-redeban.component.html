@@ -1,14 +1,6 @@
-
-    <!-- <div class="example-sidenav-content">
-      <button type="button" mat-button (click)="drawer.toggle()">
-        Toggle sidenav
-      </button>
-    </div> -->
-  
-
 <div style="padding: 2rem 0">
     <div class="charts-top-bar">
-        <div class="charts-top-bar-card" style="--max-width: 260px">
+        <div class="charts-top-bar-card" style="--max-width: 190px" *ngIf="chartType === 'client'">
             <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'amount'}" -->
             <h5 class="charts-top-bar-card__title">
                 Total de personas
@@ -17,7 +9,7 @@
                 112.850
             </span>
         </div>
-        <div class="charts-top-bar-card" style="--max-width: 220px">
+        <div class="charts-top-bar-card" style="--max-width: 190px" *ngIf="chartType === 'client'">
             <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'quantity'}" -->
             <h5 class="charts-top-bar-card__title">
                 Total de comercios
@@ -26,24 +18,25 @@
                 18.168
             </span>
         </div>
-        <div class="charts-top-bar-card" style="--max-width: 90px; margin-left: auto">
-            <mat-slide-toggle [checked]="currentDay">
-                <!-- (change)="currentDayChange($event)" -->
+        <div class="charts-top-bar-card" style="--max-width: 90px; margin-left: auto" *ngIf="chartType === 'client'">
+            <mat-slide-toggle [checked]="currentDay" (change)="currentDayChange($event)">
                 Incluye el día actual
             </mat-slide-toggle>
         </div>
-        <button mat-button color="primary" style="border: 1px solid #00339F; height: 45.5px; width: 109px;">
-            Filtrar
-            <mat-icon>filter_list</mat-icon>
-        </button>
+        <div [ngClass]="{'ml-auto': chartType === 'transactions'}">
+            <button mat-button color="primary" style="border: 1px solid #00339F; height: 45.5px; width: 109px;" (click)="clickToggleEvent();">
+                Filtrar
+                <mat-icon>filter_list</mat-icon>
+            </button>
+        </div>
         <mat-form-field appearance="fill">
-            <mat-select [(value)]="chartType">
-                <!-- (selectionChange)="chartTypeChange($event); " -->
-                <mat-option value="amount" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
+            <mat-select [(value)]="chartType" (selectionChange)="chartTypeChange($event); ">
+                <!--  -->
+                <mat-option value="client" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
                     matTooltipPosition="right">
                     Clientes
                 </mat-option>
-                <mat-option value="quantity" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
+                <mat-option value="transactions" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
                     matTooltipPosition="right">
                     Transacciones
                 </mat-option>
@@ -74,18 +67,256 @@
         'margin-inline': 'auto'
       }"></ngx-skeleton-loader>
     </div> -->
-    <div class="container">
+    <div class="container" *ngIf="chartType === 'client'">
         <div class="charts-content">
-            <!-- <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
-            [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend">
-        </app-bar-chart> -->
+            <h6>Distribución de personas</h6>
+            <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
+                [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend" [height]="height" [width]="width">
+            </app-bar-chart>
         </div>
         <div class="charts-content">
-            <!-- <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
-            [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend">
-        </app-bar-chart> -->
+            <h6>Distribución de comercios</h6>
+            <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
+                [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend" [height]="height" [width]="width">
+            </app-bar-chart>
         </div>
-
+    </div>
+    <div *ngIf="chartType === 'client'">
+        <mat-tab-group>
+            <mat-tab label="Personas">
+                <div class="tab-container">
+                    <div class="tab-container_persons">
+                        <div class="charts-content" *ngFor="let card of chartCards">
+                            <p class="subtitle">{{card.subtitle}}</p>
+                            <div
+                                style="display: flex; justify-content: space-between; padding-bottom: 1.5rem; padding-inline: .5rem;">
+                                <div class="charts-top-bar-card" style="--max-width: 182px"
+                                    *ngIf="chartType === 'client' ">
+                                    <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'amount'}" -->
+                                    <h5 class="charts-top-bar-card__title">
+                                        Total de registrados
+                                    </h5>
+                                    <span class="charts-top-bar-card__value">
+                                        112.850
+                                    </span>
+                                </div>
+                                <div class="charts-top-bar-card" style="--max-width: 182px"
+                                    *ngIf="chartType === 'client' ">
+                                    <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'quantity'}" -->
+                                    <h5 class="charts-top-bar-card__title">
+                                        Total de retirados
+                                    </h5>
+                                    <span class="charts-top-bar-card__value">
+                                        18.168
+                                    </span>
+                                </div>
+                            </div>
+                            <app-doughnut-chart [doughnutChartData]="doughnutChartData"
+                                [doughnutChartLabels]="doughnutChartLabels"
+                                [doughnutChartOptions]="doughnutChartOptions"
+                                [doughnutChartLegend]="doughnutChartLegend" [height]="doughnutheight"
+                                [width]="doughnutWidth">
+                            </app-doughnut-chart>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Comercios" class="tab-container">
+                <div class="tab-container">
+                    <h6 style="margin-bottom: 0px;">Ingreso de los últimos 30 días, desde 8/01/22 - 06/02/22</h6>
+                    <div class="tab-container_commerce">
+                        <div class="charts-content" *ngFor="let card of chartCards">
+                            <p class="subtitle">{{card.subtitle}}</p>
+                            <div
+                                style="display: flex; justify-content: space-between; padding-bottom: 1.5rem; padding-inline: .5rem;">
+                                <div class="charts-top-bar-card" style="--max-width: 182px"
+                                    *ngIf="chartType === 'client' ">
+                                    <h5 class="charts-top-bar-card__title">
+                                        Total de registrados
+                                    </h5>
+                                    <span class="charts-top-bar-card__value">
+                                        112.850
+                                    </span>
+                                </div>
+                                <div class="charts-top-bar-card" style="--max-width: 182px"
+                                    *ngIf="chartType === 'client' ">
+                                    <h5 class="charts-top-bar-card__title">
+                                        Total de retirados
+                                    </h5>
+                                    <span class="charts-top-bar-card__value">
+                                        18.168
+                                    </span>
+                                </div>
+                            </div>
+                            <app-doughnut-chart [doughnutChartData]="doughnutChartData"
+                                [doughnutChartLabels]="doughnutChartLabels"
+                                [doughnutChartOptions]="doughnutChartOptions"
+                                [doughnutChartLegend]="doughnutChartLegend" [height]="doughnutheight"
+                                [width]="doughnutWidth">
+                            </app-doughnut-chart>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
     </div>
 
+    <!-- TRANSACCIONES -->
+    <div *ngIf="chartType === 'transactions'">
+        <mat-tab-group>
+            <mat-tab label="P2M">
+                <div style="padding: 1rem 0">
+                    <div class="charts-top-bar">
+                        <div class="charts-top-bar-card" style="--max-width: 190px">
+                            <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'amount'}" -->
+                            <h5 class="charts-top-bar-card__title">
+                                Valor Total de Trx
+                            </h5>
+                            <span class="charts-top-bar-card__value">
+                                112.850
+                            </span>
+                        </div>
+                        <div class="charts-top-bar-card" style="--max-width: 190px">
+                            <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'quantity'}" -->
+                            <h5 class="charts-top-bar-card__title">
+                                Cantidad Total de Trx
+                            </h5>
+                            <span class="charts-top-bar-card__value">
+                                18.168
+                            </span>
+                        </div>
+                        <div class="charts-top-bar-card" style="--max-width: 90px; margin-left: auto">
+                            <mat-slide-toggle [checked]="currentDay" (change)="currentDayChange($event)">
+                                Incluye el día actual
+                            </mat-slide-toggle>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="charts-content">
+                            <div style="display: flex; justify-content: space-between;">
+                                <h6>Transacciones: Emisor</h6>
+                                <p>Desde 8/01/22 - 06/02/22</p>
+                            </div>
+                            <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
+                                [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend" [height]="height"
+                                [width]="width">
+                            </app-bar-chart>
+                        </div>
+                        <div class="charts-content">
+                            <div style="display: flex; justify-content: space-between;">
+                                <h6>Transacciones: Receptor</h6>
+                                <p>Desde 8/01/22 - 06/02/22</p>
+                            </div>
+                            <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
+                                [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend" [height]="height"
+                                [width]="width">
+                            </app-bar-chart>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="P2P">
+                <div style="padding: 1rem 0">
+                    <div class="charts-top-bar">
+                        <div class="charts-top-bar-card" style="--max-width: 190px">
+                            <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'amount'}" -->
+                            <h5 class="charts-top-bar-card__title">
+                                Valor Total de Trx
+                            </h5>
+                            <span class="charts-top-bar-card__value">
+                                112.850
+                            </span>
+                        </div>
+                        <div class="charts-top-bar-card" style="--max-width: 190px">
+                            <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'quantity'}" -->
+                            <h5 class="charts-top-bar-card__title">
+                                Cantidad Total de Trx
+                            </h5>
+                            <span class="charts-top-bar-card__value">
+                                18.168
+                            </span>
+                        </div>
+                        <!-- <div class="charts-top-bar-card" style="--max-width: 90px; margin-left: auto">
+                            <mat-slide-toggle [checked]="currentDay" (change)="currentDayChange($event)">
+                                Incluye el día actual
+                            </mat-slide-toggle>
+                        </div> -->
+                    </div>
+                    <div class="container">
+                        <div class="charts-content">
+                            <div style="display: flex; justify-content: space-between;">
+                                <h6>Transacciones: Emisor</h6>
+                                <p>Desde 8/01/22 - 06/02/22</p>
+                            </div>
+                            <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
+                                [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend" [height]="height"
+                                [width]="width">
+                            </app-bar-chart>
+                        </div>
+                        <div class="charts-content">
+                            <div style="display: flex; justify-content: space-between;">
+                                <h6>Transacciones: Receptor</h6>
+                                <p>Desde 8/01/22 - 06/02/22</p>
+                            </div>
+                            <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
+                                [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend" [height]="height"
+                                [width]="width">
+                            </app-bar-chart>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="P2eM">
+                <div style="padding: 1rem 0">
+                    <div class="charts-top-bar">
+                        <div class="charts-top-bar-card" style="--max-width: 190px">
+                            <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'amount'}" -->
+                            <h5 class="charts-top-bar-card__title">
+                                Valor Total de Trx
+                            </h5>
+                            <span class="charts-top-bar-card__value">
+                                112.850
+                            </span>
+                        </div>
+                        <div class="charts-top-bar-card" style="--max-width: 190px">
+                            <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'quantity'}" -->
+                            <h5 class="charts-top-bar-card__title">
+                                Cantidad Total de Trx
+                            </h5>
+                            <span class="charts-top-bar-card__value">
+                                18.168
+                            </span>
+                        </div>
+                        <div class="charts-top-bar-card" style="--max-width: 90px; margin-left: auto">
+                            <mat-slide-toggle [checked]="currentDay" (change)="currentDayChange($event)">
+                                Incluye el día actual
+                            </mat-slide-toggle>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="charts-content">
+                            <div style="display: flex; justify-content: space-between;">
+                                <h6>Transacciones: Emisor</h6>
+                                <p>Desde 8/01/22 - 06/02/22</p>
+                            </div>
+                            <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
+                                [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend" [height]="height"
+                                [width]="width">
+                            </app-bar-chart>
+                        </div>
+                        <div class="charts-content">
+                            <div style="display: flex; justify-content: space-between;">
+                                <h6>Transacciones: Receptor</h6>
+                                <p>Desde 8/01/22 - 06/02/22</p>
+                            </div>
+                            <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
+                                [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend" [height]="height"
+                                [width]="width">
+                            </app-bar-chart>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
 </div>

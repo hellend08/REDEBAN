@@ -1,17 +1,56 @@
 <div class="relative">
-  <mat-drawer-container class="example-container" autosize  hasBackdrop="false">
+  <mat-drawer-container class="example-container" autosize hasBackdrop="false">
     <mat-drawer #drawer class="example-sidenav" mode="over" position="end">
-      <p>Auto-resizing sidenav</p>
-      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-      <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
-      </button>
+      <div class="filter-container">
+        <!-- <div  style="position: fixed; top: 0; width: 32%;"> -->
+        <section class="top">
+          <h5>Filtrar</h5>
+          <button mat-button (click)="drawer.toggle()" style="font-size: 16px;">
+            Cerrar
+            <!-- <p style="margin-left: auto"></p> -->
+            <mat-icon>close</mat-icon>
+          </button>
+        </section>
+        <mat-divider></mat-divider>
+        <section class="medium">
+          <p>Seleccion por entidades</p>
+          <mat-slide-toggle checked="true"></mat-slide-toggle>
+        </section>
+        <mat-divider></mat-divider>
+        <section class="low">
+          <p>Seleccion por entidades</p>
+          <section>
+            <mat-form-field class="" floatLabel="never" style="width: 100%;">
+              <mat-label>Buscar entidad aquí...</mat-label>
+              <mat-chip-list #chipList aria-label="Bank selection">
+                <mat-chip *ngFor="let bank of banks" [selectable]="selectable" [removable]="removable"
+                  (removed)="remove(bank)">
+                  {{bank}}
+                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input placeholder="Buscar entidad aquí..." #bankInput [formControl]="bankCtrl" [matAutocomplete]="auto"
+                  [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                  (matChipInputTokenEnd)="add($event)">
+              </mat-chip-list>
+              <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                <mat-option *ngFor="let bank of filteredBanks | async" [value]="bank">
+                  {{bank}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </section>
+          <div class="apply-filter">
+          <button mat-raised-button class="btn-gradient">
+            <!-- style="position: fixed; bottom: 0; width: 32%;" -->
+            Aplicar Filtro
+          </button>
+        </div>
+        </section>
+      <!-- </div> -->
+      </div>
     </mat-drawer>
-  
     <div class="container">
       <router-outlet></router-outlet>
     </div>
-</mat-drawer-container>
+  </mat-drawer-container>
 </div>
-
-  

@@ -128,7 +128,7 @@
         {{ chartType === 'quantity' ? 'Cantidad' : 'Monto' }} - Ingreso de los últimos 7 días, desde 8/01/22 - 06/02/22
       </p>
       <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels" [barChartOptions]="barChartOptions"
-        [barChartLegend]="barChartLegend">
+        [barChartLegend]="barChartLegend" [height]="height">
       </app-bar-chart>
       <p *ngIf="chartType === 'amount'" class="charts-content__notes">
         *Valores aproximados en millones de pesos
