@@ -13,12 +13,12 @@
         </section>
         <mat-divider></mat-divider>
         <section class="medium">
-          <p>Seleccion por entidades</p>
+          <p>Selección por entidades</p>
           <mat-slide-toggle checked="true"></mat-slide-toggle>
         </section>
         <mat-divider></mat-divider>
         <section class="low">
-          <p>Seleccion por entidades</p>
+          <p>Selección por entidades</p>
           <section>
             <mat-form-field class="" floatLabel="never" style="width: 100%;">
               <mat-label>Buscar entidad aquí...</mat-label>
@@ -40,7 +40,7 @@
             </mat-form-field>
           </section>
           <div class="apply-filter">
-          <button mat-raised-button class="btn-gradient">
+          <button mat-raised-button class="btn-gradient" (click)="drawer.toggle()">
             <!-- style="position: fixed; bottom: 0; width: 32%;" -->
             Aplicar Filtro
           </button>

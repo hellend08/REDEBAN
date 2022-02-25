@@ -51,7 +51,6 @@ export class DashboardRedebanComponent implements OnInit {
   ]
 
   ngOnInit(): void {
-    // this.parent.allFruits = this.chartCards.slice();
     this.getData(this.chartType).then((resp: any) => {
       const colors = this.getColors(resp.data[0])
       const data = this.updateDataColors(resp.data, colors)
@@ -59,11 +58,11 @@ export class DashboardRedebanComponent implements OnInit {
 
       this.barChartLabels = resp.labels
       this.barChartData = data
-      this.barChartOptions = resp.options
+      this.barChartOptions = this.clientBarChartOptions
 
       this.doughnutChartLabels = this.clientDoughnutChartLabels
       this.doughnutChartData = this.clientDoughnutChartData
-      this.doughnutChartOptions = resp.options
+      this.doughnutChartOptions = this.clientDoughnutChartOptions
 
     })
     setTimeout(() => {
@@ -133,10 +132,10 @@ export class DashboardRedebanComponent implements OnInit {
   clientBarChartData: ChartDataSets[] = [
     { 
       label: 'Banco 1',
-      data: [200, 240, 260, 220],
+      data: [20, 24, 6, 12],
       backgroundColor: ['#478CCA', '#478CCA'],
       hoverBackgroundColor: ['#478CCA', '#478CCA'],
-      borderColor: ['#00339F', '#86AAF6'],
+      borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
       stack: 'a'
     },
       // hoverBorderWidth: 3,
@@ -144,74 +143,74 @@ export class DashboardRedebanComponent implements OnInit {
       // , '#B377C1', '#F48684', '#EF5654', '#F9B967', '#F3A239', '#F1E517', '#FEF895', '#6AA4D8', '#478CCA'],
       // hoverBackgroundColor: ['#2855B2', '#CADBFF'],
     { 
-      data: [108, 115, 110, 100],
+      data: [8, 4, 5, 3],
       label: 'Banco 2',
       backgroundColor: ['#6AA4D8', '#6AA4D8', '#6AA4D8', '#6AA4D8'],
       hoverBackgroundColor: ['#6AA4D8', '#6AA4D8', '#6AA4D8', '#6AA4D8'],
-      borderColor: ['#6AA4D8', '#6AA4D8'],
+      borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
       stack: 'a'
     },
     { 
-      data: [28, 48, 40, 19],
+      data: [5, 16, 9, 5],
       label: 'Banco 3',
       backgroundColor: ['#FEF895', '#FEF895', '#FEF895', '#FEF895'],
       hoverBackgroundColor: ['#FEF895', '#FEF895', '#FEF895', '#FEF895'],
-      borderColor: ['#6AA4D8', '#6AA4D8'],
+      borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
       stack: 'a'
     },
     { 
-      data: [48, 28, 40, 19],
+      data: [8, 8, 5, 18],
       label: 'Banco 4',
       backgroundColor: ['#F1E517', '#F1E517', '#F1E517', '#F1E517'],
       hoverBackgroundColor: ['#F1E517', '#F1E517', '#F1E517', '#F1E517'],
-      borderColor: ['#6AA4D8', '#6AA4D8'],
+      borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
       stack: 'a'
     },
     { 
-      data: [28, 48, 40, 19],
+      data: [6, 12, 18, 7],
       label: 'Banco 5',
       backgroundColor: ['#F3A239', '#F3A239', '#F3A239', '#F3A239'],
       hoverBackgroundColor: ['#F3A239', '#F3A239', '#F3A239', '#F3A239'],
-      borderColor: ['#6AA4D8', '#6AA4D8'],
+      borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
       stack: 'a'
     },
     { 
-      data: [48, 28, 40, 19],
+      data: [4, 9, 7, 15],
       label: 'Banco 6',
       backgroundColor: ['#F9B967', '#F9B967', '#F9B967', '#F9B967'],
       hoverBackgroundColor: ['#F9B967', '#F9B967', '#F9B967', '#F9B967'],
-      borderColor: ['#6AA4D8', '#6AA4D8'],
+      borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
       stack: 'a'
     },
-    { data: [28, 48, 40, 19],
+    { data: [16, 5, 10, 6],
       label: 'Banco 7',
       backgroundColor: ['#EF5654', '#EF5654', '#EF5654', '#EF5654'],
       hoverBackgroundColor: ['#EF5654', '#EF5654', '#EF5654', '#EF5654'],
-      borderColor: ['#6AA4D8', '#6AA4D8'],
+      borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
       stack: 'a'
     },
     { 
-      data: [38, 28, 40, 19],
+      data: [8, 2, 15, 8],
       label: 'Banco 8',
       backgroundColor: ['#F48684', '#F48684', '#F48684', '#F48684'],
       hoverBackgroundColor: ['#F48684', '#F48684', '#F48684', '#F48684'],
-      borderColor: ['#6AA4D8', '#6AA4D8'],
+      borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
       stack: 'a'
     },
     { 
-      data: [28, 48, 40, 19],
+      data: [3, 8, 5, 9],
       label: 'Banco 9',
       backgroundColor: ['#B377C1', '#B377C1', '#B377C1', '#B377C1'],
       hoverBackgroundColor: ['#B377C1', '#B377C1', '#B377C1', '#B377C1'],
-      borderColor: ['#6AA4D8', '#6AA4D8'],
+      borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
       stack: 'a'
     },
     { 
-      data: [208, 100, 50, 280],
+      data: [20, 10, 20, 14],
       label: 'Banco 10',
       backgroundColor: ['#9756A7', '#9756A7', '#9756A7', '#9756A7'],
       hoverBackgroundColor: ['#9756A7', '#9756A7', '#9756A7', '#9756A7'],
-      borderColor: ['#6AA4D8', '#6AA4D8'],
+      borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
       stack: 'a'
     }
   ];
@@ -229,6 +228,27 @@ export class DashboardRedebanComponent implements OnInit {
         },
       },
     },
+    
+    tooltips: {
+      enabled: true,
+      callbacks: {
+       
+        label: function (tooltipItem: any, data: any) {
+          let label = data.labels[tooltipItem.index];
+          let count: any = data
+            .datasets[tooltipItem.datasetIndex]
+            .data[tooltipItem.index];
+          //return label + ": " + new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'pen' }).format(count);
+          return label + ": " + count  + '%';
+        // afterLabel: function (tooltipItem: any, data: any) {
+        // let variableX = 'Banco 1';
+        //   let count: any = data
+        //     .datasets[tooltipItem.datasetIndex]
+        //     .data[tooltipItem.index];
+        //   return variableX + ": " + count + '%';
+        },
+      }
+    }
   }
 
   transactionsBarChartLabels = ['Valor Tx', 'Cantidad Tx'];
@@ -247,10 +267,6 @@ export class DashboardRedebanComponent implements OnInit {
       this.barChartData = data
       this.barChartOptions = resp.options
 
-      // this.doughnutChartLabels = resp.labels
-      // this.doughnutChartData = dataD
-      // this.doughnutChartOptions = resp.options
-
     })
     setTimeout(() => {
       this.loader = false;
@@ -260,12 +276,35 @@ export class DashboardRedebanComponent implements OnInit {
   clientDoughnutChartLabels = ['Activos', 'Inactivos'];
 
   clientDoughnutChartData = [
-    // { 
-      { data: [ 550, 450 ],
-        labels: this.doughnutChartLabels,
-        backgroundColor: ['#0033A1', '#38BCBC']},
-    // },
+    { data: [ 65, 35 ],
+      labels: this.doughnutChartLabels,
+      backgroundColor: ['#0033A1', '#38BCBC']},
   ]
 
+  clientDoughnutChartOptions =
+    {
+      legend: { position: 'top', align: 'start', padding: 10},
+      responsive: true,
+      onClick: this.chartClicked,
+      tooltips: {
+        enabled: true,
+        callbacks: {
+          afterLabel: function (tooltipItem: any, data: any) {
+          let variableX = 'Banco 1';
+            let count: any = data
+              .datasets[tooltipItem.datasetIndex]
+              .data[tooltipItem.index];
+            return variableX + ": " + count + '%';
+          },
+        }
+      }
+    }
+  
+    public chartClicked(e:any):void {
+      console.log("🚀 ~ file: bar-chart.component.ts ~ line 17 ~ LineChartComponent ~ chartItemClicked ~ e", e)
+      const valueChart = e.view.Chart.Tooltip
+      console.log(valueChart)
+  
+    }
 
 }

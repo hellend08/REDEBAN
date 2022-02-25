@@ -48,7 +48,6 @@ export class LayoutComponent implements OnInit {
 
   ngOnInit(): void {
     // console.log(this.showFiller)
-
   }
 
   add(event: MatChipInputEvent): void {
