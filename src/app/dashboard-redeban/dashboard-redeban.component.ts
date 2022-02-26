@@ -300,10 +300,14 @@ export class DashboardRedebanComponent implements OnInit {
       }
     }
   
-    public chartClicked(e:any):void {
+    public chartClicked(e:any, array:any):void {
+      console.log("🚀 ~ file: dashboard-redeban.component.ts ~ line 304 ~ DashboardRedebanComponent ~ chartClicked ~ array", array)
       console.log("🚀 ~ file: bar-chart.component.ts ~ line 17 ~ LineChartComponent ~ chartItemClicked ~ e", e)
-      const valueChart = e.view.Chart.Tooltip
-      console.log(valueChart)
+      
+      const clickedLabel = array[0]._view.label
+      alert('Click en ' + clickedLabel)
+      // const valueChart = e.view.Chart.Tooltip
+      // console.log(valueChart)
   
     }
 
