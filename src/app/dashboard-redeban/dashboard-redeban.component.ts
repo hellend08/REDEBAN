@@ -1,3 +1,4 @@
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ChartDataSets } from 'chart.js';
 import { LayoutComponent } from '../layout/layout.component';
@@ -51,6 +52,7 @@ export class DashboardRedebanComponent implements OnInit {
   ]
 
   ngOnInit(): void {
+
     this.getData(this.chartType).then((resp: any) => {
       const colors = this.getColors(resp.data[0])
       const data = this.updateDataColors(resp.data, colors)
@@ -283,7 +285,7 @@ export class DashboardRedebanComponent implements OnInit {
 
   clientDoughnutChartOptions =
     {
-      legend: { position: 'top', align: 'start', padding: 10},
+      legend: { position: 'top', align: 'start', padding: {bottom: 10} },
       responsive: true,
       onClick: this.chartClicked,
       tooltips: {
@@ -302,9 +304,69 @@ export class DashboardRedebanComponent implements OnInit {
   
     public chartClicked(e:any):void {
       console.log("🚀 ~ file: bar-chart.component.ts ~ line 17 ~ LineChartComponent ~ chartItemClicked ~ e", e)
-      const valueChart = e.view.Chart.Tooltip
+      const valueChart = e.srcElement.__ngContext__[23][0]
       console.log(valueChart)
+
+      // e.active[0]._index
   
     }
 
 }
+
+   // }
+      /** Imported from a question linked above. 
+          Apparently Works for ChartJS V2 **/
+      // datalabels: {
+      //   formatter: (value : any, dnct1 : any) => {
+      //     let sum = 0;
+      //     let dataArr = dnct1.chart.data.datasets[0].data;
+      //     dataArr.map(function(data: any){
+      //       sum += Number(data);
+      //     });
+
+      //     let percentage = (value * 100 / sum).toFixed(2) + '%';
+      //     return percentage;
+      //   },
+      //   color: '#ff3',
+      // }
+      
+  // options: {
+    // layout: {
+    //   padding: {
+    //     bottom: 25
+    //   }
+    // },
+    // events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
+    // plugins: {
+    //   tooltip: {
+    //     // Tooltip will only receive click events
+    //     events: ['click']
+    //   }
+    // },
+
+    // tooltips: {
+    //   callbacks: {
+    //     title: function(tooltipItem: any, data: any) {
+    //       return data['labels'][tooltipItem[0]['index']];
+    //     },
+    //     // label: function(tooltipItem: any, data: any) {
+    //     //   return data['datasets'][0]['data'][tooltipItem['index']];
+    //     // },
+    //     afterLabel: function(tooltipItem: any, data: any) {
+    //       var dataset = data['datasets'][0];
+    //       var percent = Math.round((dataset['data'][tooltipItem['index']] / dataset["_meta"][0]) * 100)
+    //       return 'Percentage value: ' + percent + '%';
+    //     }
+    //   },
+    // }
+    // plugins: {
+       // footer: (ttItem: any) => {
+          //   let sum = 0;
+          //   let dataArr = ttItem[0].dataset.data;
+          //   dataArr.map(function(data: any) {
+          //     sum += Number(data);
+          //   });
+
+          //   let percentage = (ttItem[0].parsed * 100 / sum).toFixed(2) + '%';
+          //   return `Percentage of data: ${percentage}`;
+          // }
