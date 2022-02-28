@@ -1,5 +1,5 @@
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ChartDataSets } from 'chart.js';
 import { LayoutComponent } from '../layout/layout.component';
 
@@ -13,7 +13,7 @@ export class DashboardRedebanComponent implements OnInit {
   showDelay = 700;
   loader: boolean = true;
 
-  constructor(private parent: LayoutComponent) { }
+  constructor(private parent: LayoutComponent, private router: Router) { }
 
   currentDay = false;
   chartType = 'client';
@@ -218,39 +218,68 @@ export class DashboardRedebanComponent implements OnInit {
   ];
 
   clientBarChartOptions = {
-    // onClick: this.chartItemClicked,
     scaleShowVerticalLines: false,
     responsive: true,
-    scales: {
-      y: {
-        ticks: {
-          callback: function (value: any) {
-            return value;
-          },
-        },
-      },
-    },
-    
-    tooltips: {
-      enabled: true,
-      callbacks: {
+    onClick: this.chartBarClicked,
+    // scales: {
+    //   y: {
+    //     ticks: {
+    //       callback: function (value: any) {
+    //         console.log(value)
+    //         return value;
+            
+    //       },
+    //     },
+    //   },
+    // },
+    // tooltips: {
+    //   enabled: true,
+    //   callbacks: {
        
-        label: function (tooltipItem: any, data: any) {
-          let label = data.labels[tooltipItem.index];
-          let count: any = data
-            .datasets[tooltipItem.datasetIndex]
-            .data[tooltipItem.index];
-          //return label + ": " + new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'pen' }).format(count);
-          return label + ": " + count  + '%';
-        // afterLabel: function (tooltipItem: any, data: any) {
-        // let variableX = 'Banco 1';
-        //   let count: any = data
-        //     .datasets[tooltipItem.datasetIndex]
-        //     .data[tooltipItem.index];
-        //   return variableX + ": " + count + '%';
-        },
-      }
+    //     label: function (tooltipItem: any, data: any) {
+    //       let label = data.labels[tooltipItem.index];
+    //       // let label = data.datasets[tooltipItem.index];
+    //       // console.log(data)
+    //       // let porbad = Object.values(data.datasets)
+    //       // console.log(porbad.map(function(ad: any) {
+    //       //  return ad
+    //       // }))
+          
+    //       let count: any = data
+    //         .datasets[tooltipItem.datasetIndex]
+    //         .data[tooltipItem.index];
+    //       //return label + ": " + new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'pen' }).format(count);
+    //       return label + ": " + count  + '%';
+    //     // afterLabel: function (tooltipItem: any, data: any) {
+    //     // let variableX = 'Banco 1';
+    //     //   let count: any = data
+    //     //     .datasets[tooltipItem.datasetIndex]
+    //     //     .data[tooltipItem.index];
+    //     //   return variableX + ": " + count + '%';
+    //     },
+    //   }
+    // }
+  }
+
+  public chartBarClicked(e:any, array:any):void {
+    console.log("🚀 ~ file: dashboard-redeban.component.ts ~ line 304 ~ DashboardRedebanComponent ~ chartClicked ~ array", array)
+    const clickedLabel = JSON.stringify(array[0]._chart.tooltip._view.body[0].lines)
+    .substring(0, 10).replace(/[\[\'\:\'\"\']+/g,'');
+                         
+    if (clickedLabel == 'Banco 10') {
+      window.location.assign('/bank')
+      // alert('Click en ' + clickedLabel)
+    } else {
+      alert('Click en ' + clickedLabel)
     }
+    // const valueChart = e.srcElement.__ngContext__[23][0]
+    // console.log(valueChart)
+    // e.active[0]._index
+    // const clickedLabel = array[1]._view.datasetLabel 
+    // _chart.tooltip._view.body[0].lines
+    // const valueChart = e.view.Chart.Tooltip
+    // console.log(valueChart)
+
   }
 
   transactionsBarChartLabels = ['Valor Tx', 'Cantidad Tx'];
@@ -302,12 +331,17 @@ export class DashboardRedebanComponent implements OnInit {
       }
     }
   
-    public chartClicked(e:any):void {
-      console.log("🚀 ~ file: bar-chart.component.ts ~ line 17 ~ LineChartComponent ~ chartItemClicked ~ e", e)
-      const valueChart = e.srcElement.__ngContext__[23][0]
-      console.log(valueChart)
-
+    public chartClicked(e:any, array:any):void {
+      console.log("🚀 ~ file: dashboard-redeban.component.ts ~ line 304 ~ DashboardRedebanComponent ~ chartClicked ~ array", array)
+      // console.log("🚀 ~ file: bar-chart.component.ts ~ line 17 ~ LineChartComponent ~ chartItemClicked ~ e", e)
+      // const valueChart = e.srcElement.__ngContext__[23][0]
+      // console.log(valueChart)
       // e.active[0]._index
+      
+      const clickedLabel = array[0]._view.label
+      alert('Click en ' + clickedLabel)
+      // const valueChart = e.view.Chart.Tooltip
+      // console.log(valueChart)
   
     }
 

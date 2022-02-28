@@ -41,6 +41,7 @@ import { DashboardBancoComponent } from './dashboard-banco/dashboard-banco.compo
 import { DashboardComercioComponent } from './dashboard-comercio/dashboard-comercio.component';
 import { DashboardRedebanComponent } from './dashboard-redeban/dashboard-redeban.component';
 import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.component';
+import { BankOptionComponent } from './dashboard-redeban/bank-option/bank-option.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.componen
     DashboardComercioComponent,
     DashboardRedebanComponent,
     DoughnutChartComponent,
+    BankOptionComponent,
    
   ],
   imports: [

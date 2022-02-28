@@ -70,8 +70,14 @@
     <div class="container" *ngIf="chartType === 'client'">
         <div class="charts-content">
             <h6 style="margin-bottom: .5rem;">Distribución de personas</h6>
-            <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
-                [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend" [height]="height" [width]="width">
+            <app-bar-chart
+                [barChartData]="barChartData"
+                [barChartLabels]="barChartLabels"
+                [barChartOptions]="barChartOptions"
+                [barChartLegend]="barChartLegend"
+                [height]="height"
+                [width]="width"
+            >
             </app-bar-chart>
         </div>
         <div class="charts-content">

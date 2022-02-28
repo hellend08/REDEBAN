@@ -1,0 +1,66 @@
+<div style="padding: 1rem 0">
+    <div style="display: flex; color: #00339F; margin-bottom: 1rem;" role="button" routerLink="/redeban">
+        <mat-icon>arrow_back_ios</mat-icon>
+        <p>Clientes</p>
+    </div>
+    <h2 class="title">Banco 10</h2>
+    <div class="charts-top-bar">
+        <div class="charts-top-bar format-line">
+            <!-- *ngIf="!topCards" -->
+            <div class="charts-top-bar-card" style="--max-width: 190px">
+                <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'registry'}" -->
+                <h5 class="charts-top-line-card__title">
+                    Total de registrados
+                </h5>
+                <span class="charts-top-line-card__value">
+                    112,850,65
+                </span>
+            </div>
+            <div class="charts-top-bar-card" style="--max-width: 170px">
+                <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'active'}" -->
+                <h5 class="charts-top-line-card__title">
+                    Total de activos
+                </h5>
+                <span class="charts-top-line-card__value">
+                    46,656
+                </span>
+            </div>
+            <div class="charts-top-bar-card" style="--max-width: 170px">
+                <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'inactive'}" -->
+                <h5 class="charts-top-line-card__title">
+                    Total de Inactivos
+                </h5>
+                <span class="charts-top-line-card__value">
+                    46,656
+                </span>
+            </div>
+            <div class="charts-top-bar-card" style="--max-width: 170px">
+                <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'retirement'}" -->
+                <h5 class="charts-top-line-card__title">
+                    Total de retirados
+                </h5>
+                <span class="charts-top-line-card__value">
+                    46,656
+                </span>
+            </div>
+            <div class="charts-top-bar-card" style="--max-width: 80px; padding-inline: .8rem;">
+                <mat-slide-toggle>
+                    <!-- [checked]="currentDay" (change)="currentDayChange($event)" -->
+                    Incluir el día actual
+                </mat-slide-toggle>
+            </div>
+        </div>
+    </div>
+    <div class="charts-content" >
+        <!-- *ngIf="!loader && !topCards" -->
+        <p class="charts-content__title"> 
+          Registro de comercios de los últimos 7 días, desde 8/01/22 - 06/02/22
+        </p>
+        <app-line-chart [lineChartType]="lineChartType" [lineChartData]="lineChartData" [lineChartLabels]="lineChartLabels"
+          [lineChartOptions]="lineChartOptions" [lineChartLegend]="lineChartLegend">
+        </app-line-chart>
+        <!-- <p *ngIf="chartType === 'amount'" class="charts-content__notes">
+          *Valores aproximados en millones de pesos
+        </p> -->
+      </div>
+</div>
