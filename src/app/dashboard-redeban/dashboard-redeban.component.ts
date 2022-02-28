@@ -221,17 +221,6 @@ export class DashboardRedebanComponent implements OnInit {
     scaleShowVerticalLines: false,
     responsive: true,
     onClick: this.chartBarClicked,
-    // scales: {
-    //   y: {
-    //     ticks: {
-    //       callback: function (value: any) {
-    //         console.log(value)
-    //         return value;
-            
-    //       },
-    //     },
-    //   },
-    // },
     // tooltips: {
     //   enabled: true,
     //   callbacks: {
@@ -272,14 +261,7 @@ export class DashboardRedebanComponent implements OnInit {
     } else {
       alert('Click en ' + clickedLabel)
     }
-    // const valueChart = e.srcElement.__ngContext__[23][0]
-    // console.log(valueChart)
-    // e.active[0]._index
-    // const clickedLabel = array[1]._view.datasetLabel 
-    // _chart.tooltip._view.body[0].lines
-    // const valueChart = e.view.Chart.Tooltip
-    // console.log(valueChart)
-
+  
   }
 
   transactionsBarChartLabels = ['Valor Tx', 'Cantidad Tx'];
@@ -333,10 +315,6 @@ export class DashboardRedebanComponent implements OnInit {
   
     public chartClicked(e:any, array:any):void {
       console.log("🚀 ~ file: dashboard-redeban.component.ts ~ line 304 ~ DashboardRedebanComponent ~ chartClicked ~ array", array)
-      // console.log("🚀 ~ file: bar-chart.component.ts ~ line 17 ~ LineChartComponent ~ chartItemClicked ~ e", e)
-      // const valueChart = e.srcElement.__ngContext__[23][0]
-      // console.log(valueChart)
-      // e.active[0]._index
       
       const clickedLabel = array[0]._view.label
       alert('Click en ' + clickedLabel)
@@ -346,61 +324,3 @@ export class DashboardRedebanComponent implements OnInit {
     }
 
 }
-
-   // }
-      /** Imported from a question linked above. 
-          Apparently Works for ChartJS V2 **/
-      // datalabels: {
-      //   formatter: (value : any, dnct1 : any) => {
-      //     let sum = 0;
-      //     let dataArr = dnct1.chart.data.datasets[0].data;
-      //     dataArr.map(function(data: any){
-      //       sum += Number(data);
-      //     });
-
-      //     let percentage = (value * 100 / sum).toFixed(2) + '%';
-      //     return percentage;
-      //   },
-      //   color: '#ff3',
-      // }
-      
-  // options: {
-    // layout: {
-    //   padding: {
-    //     bottom: 25
-    //   }
-    // },
-    // events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
-    // plugins: {
-    //   tooltip: {
-    //     // Tooltip will only receive click events
-    //     events: ['click']
-    //   }
-    // },
-
-    // tooltips: {
-    //   callbacks: {
-    //     title: function(tooltipItem: any, data: any) {
-    //       return data['labels'][tooltipItem[0]['index']];
-    //     },
-    //     // label: function(tooltipItem: any, data: any) {
-    //     //   return data['datasets'][0]['data'][tooltipItem['index']];
-    //     // },
-    //     afterLabel: function(tooltipItem: any, data: any) {
-    //       var dataset = data['datasets'][0];
-    //       var percent = Math.round((dataset['data'][tooltipItem['index']] / dataset["_meta"][0]) * 100)
-    //       return 'Percentage value: ' + percent + '%';
-    //     }
-    //   },
-    // }
-    // plugins: {
-       // footer: (ttItem: any) => {
-          //   let sum = 0;
-          //   let dataArr = ttItem[0].dataset.data;
-          //   dataArr.map(function(data: any) {
-          //     sum += Number(data);
-          //   });
-
-          //   let percentage = (ttItem[0].parsed * 100 / sum).toFixed(2) + '%';
-          //   return `Percentage of data: ${percentage}`;
-          // }
