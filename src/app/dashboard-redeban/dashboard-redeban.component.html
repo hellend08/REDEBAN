@@ -1,6 +1,7 @@
 <div style="padding: 2rem 0">
     <div class="charts-top-bar">
-        <div class="charts-top-bar-card" style="--max-width: 190px" *ngIf="chartType === 'client'">
+        <div class="charts-top-bar-card" style="--max-width: 190px" *ngIf="chartType === 'client'"
+        matTooltip="Info about the action" matTooltipPosition="above">
             <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'amount'}" -->
             <h5 class="charts-top-bar-card__title">
                 Total de personas
@@ -9,7 +10,8 @@
                 112.850
             </span>
         </div>
-        <div class="charts-top-bar-card" style="--max-width: 190px" *ngIf="chartType === 'client'">
+        <div class="charts-top-bar-card" style="--max-width: 190px" *ngIf="chartType === 'client'"
+        matTooltip="Info about the action" matTooltipPosition="above">
             <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'quantity'}" -->
             <h5 class="charts-top-bar-card__title">
                 Total de comercios
@@ -18,12 +20,14 @@
                 18.168
             </span>
         </div>
-        <div class="charts-top-bar-card" style="--max-width: 90px; margin-left: auto" *ngIf="chartType === 'client'">
+        <div class="charts-top-bar-card" style="--max-width: 90px; margin-left: auto" *ngIf="chartType === 'client'"
+        matTooltip="Info about the action" matTooltipPosition="above">
             <mat-slide-toggle [checked]="currentDay" (change)="currentDayChange($event)">
                 Incluye el día actual
             </mat-slide-toggle>
         </div>
-        <div [ngClass]="{'ml-auto': chartType === 'transactions'}">
+        <div [ngClass]="{'ml-auto': chartType === 'transactions'}"
+        matTooltip="Info about the action" matTooltipPosition="above">
             <button mat-button color="primary" style="border: 1px solid #00339F; height: 45.5px; width: 109px;" (click)="clickToggleEvent();">
                 Filtrar
                 <mat-icon>filter_list</mat-icon>
@@ -32,12 +36,10 @@
         <mat-form-field appearance="fill">
             <mat-select [(value)]="chartType" (selectionChange)="chartTypeChange($event); ">
                 <!--  -->
-                <mat-option value="client" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
-                    matTooltipPosition="right">
+                <mat-option value="client">
                     Clientes
                 </mat-option>
-                <mat-option value="transactions" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
-                    matTooltipPosition="right">
+                <mat-option value="transactions">
                     Transacciones
                 </mat-option>
             </mat-select>
@@ -173,7 +175,8 @@
             <mat-tab label="P2M">
                 <div style="padding: 1rem 0">
                     <div class="charts-top-bar">
-                        <div class="charts-top-bar-card" style="--max-width: 190px">
+                        <div class="charts-top-bar-card" style="--max-width: 190px"
+                        matTooltip="Info about the action" matTooltipPosition="above">
                             <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'amount'}" -->
                             <h5 class="charts-top-bar-card__title">
                                 Valor Total de Trx
@@ -182,7 +185,8 @@
                                 112.850
                             </span>
                         </div>
-                        <div class="charts-top-bar-card" style="--max-width: 190px">
+                        <div class="charts-top-bar-card" style="--max-width: 190px"
+                        matTooltip="Info about the action" matTooltipPosition="above">
                             <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'quantity'}" -->
                             <h5 class="charts-top-bar-card__title">
                                 Cantidad Total de Trx
@@ -191,7 +195,8 @@
                                 18.168
                             </span>
                         </div>
-                        <div class="charts-top-bar-card" style="--max-width: 90px; margin-left: auto">
+                        <div class="charts-top-bar-card" style="--max-width: 90px; margin-left: auto"
+                        matTooltip="Info about the action" matTooltipPosition="above">
                             <mat-slide-toggle [checked]="currentDay" (change)="currentDayChange($event)">
                                 Incluye el día actual
                             </mat-slide-toggle>
@@ -224,7 +229,8 @@
             <mat-tab label="P2P">
                 <div style="padding: 1rem 0">
                     <div class="charts-top-bar">
-                        <div class="charts-top-bar-card" style="--max-width: 190px">
+                        <div class="charts-top-bar-card" style="--max-width: 190px"
+                        matTooltip="Info about the action" matTooltipPosition="above">
                             <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'amount'}" -->
                             <h5 class="charts-top-bar-card__title">
                                 Valor Total de Trx
@@ -233,7 +239,8 @@
                                 112.850
                             </span>
                         </div>
-                        <div class="charts-top-bar-card" style="--max-width: 190px">
+                        <div class="charts-top-bar-card" style="--max-width: 190px"
+                        matTooltip="Info about the action" matTooltipPosition="above">
                             <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'quantity'}" -->
                             <h5 class="charts-top-bar-card__title">
                                 Cantidad Total de Trx
@@ -270,7 +277,8 @@
             <mat-tab label="P2eM">
                 <div style="padding: 1rem 0">
                     <div class="charts-top-bar">
-                        <div class="charts-top-bar-card" style="--max-width: 190px">
+                        <div class="charts-top-bar-card" style="--max-width: 190px"
+                        matTooltip="Info about the action" matTooltipPosition="above">
                             <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'amount'}" -->
                             <h5 class="charts-top-bar-card__title">
                                 Valor Total de Trx
@@ -279,7 +287,8 @@
                                 112.850
                             </span>
                         </div>
-                        <div class="charts-top-bar-card" style="--max-width: 190px">
+                        <div class="charts-top-bar-card" style="--max-width: 190px"
+                        matTooltip="Info about the action" matTooltipPosition="above">
                             <!-- [ngClass]="{'charts-top-bar-card--darken': chartType === 'quantity'}" -->
                             <h5 class="charts-top-bar-card__title">
                                 Cantidad Total de Trx
@@ -288,7 +297,8 @@
                                 18.168
                             </span>
                         </div>
-                        <div class="charts-top-bar-card" style="--max-width: 90px; margin-left: auto">
+                        <div class="charts-top-bar-card" style="--max-width: 90px; margin-left: auto"
+                        matTooltip="Info about the action" matTooltipPosition="above">
                             <mat-slide-toggle [checked]="currentDay" (change)="currentDayChange($event)">
                                 Incluye el día actual
                             </mat-slide-toggle>

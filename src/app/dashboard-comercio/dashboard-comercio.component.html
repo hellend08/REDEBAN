@@ -2,7 +2,7 @@
     <div class="charts-top-bar">
         <!-- <div class="charts-top-bar lg:w-[700px]"> -->
             <div class="charts-top-bar-card" [ngClass]="{'charts-top-bar-card--darken': chartType === 'amount'}"
-                style="--max-width: 300px">
+                style="--max-width: 300px" matTooltip="Info about the action" matTooltipPosition="above">
                 <h5 class="charts-top-bar-card__title">
                     Total monto
                 </h5>
@@ -11,7 +11,7 @@
                 </span>
             </div>
             <div class="charts-top-bar-card" [ngClass]="{'charts-top-bar-card--darken': chartType === 'quantity'}"
-                style="--max-width: 220px">
+                style="--max-width: 220px" matTooltip="Info about the action" matTooltipPosition="above">
                 <h5 class="charts-top-bar-card__title">
                     Total cantidad
                 </h5>
@@ -19,7 +19,8 @@
                     46,656
                 </span>
             </div>
-            <div class="charts-top-bar-card" style="--max-width: 90px">
+            <div class="charts-top-bar-card" style="--max-width: 90px"
+            matTooltip="Info about the action" matTooltipPosition="above">
                 <mat-slide-toggle [checked]="currentDay" (change)="currentDayChange($event)">
                     Incluir el día actual
                 </mat-slide-toggle>
@@ -27,12 +28,10 @@
         <!-- </div> -->
         <mat-form-field appearance="fill" style="margin-left: auto">
             <mat-select [(value)]="chartType" (selectionChange)="chartTypeChange($event); ">
-                <mat-option value="amount" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
-                    matTooltipPosition="right">
+                <mat-option value="amount">
                     Valor en Ventas
                 </mat-option>
-                <mat-option value="quantity" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
-                    matTooltipPosition="right">
+                <mat-option value="quantity">
                     Cantidad de Ventas
                 </mat-option>
             </mat-select>

@@ -2,7 +2,7 @@
     <div class="charts-top-bar">
       <div class="charts-top-bar format-bar" *ngIf="topCards">
         <div class="charts-top-bar-card" [ngClass]="{'charts-top-bar-card--darken': chartType === 'amount'}"
-          style="--max-width: 300px">
+          style="--max-width: 300px" matTooltip="Info about the action" matTooltipPosition="above">
           <h5 class="charts-top-bar-card__title">
             Total monto
           </h5>
@@ -11,7 +11,7 @@
           </span>
         </div>
         <div class="charts-top-bar-card" [ngClass]="{'charts-top-bar-card--darken': chartType === 'quantity'}"
-          style="--max-width: 220px">
+          style="--max-width: 220px" matTooltip="Info about the action" matTooltipPosition="above">
           <h5 class="charts-top-bar-card__title">
             Total cantidad
           </h5>
@@ -19,7 +19,8 @@
             46,656
           </span>
         </div>
-        <div class="charts-top-bar-card" style="--max-width: 90px">
+        <div class="charts-top-bar-card" style="--max-width: 90px"
+        matTooltip="Info about the action" matTooltipPosition="above">
           <mat-slide-toggle [checked]="currentDay" (change)="currentDayChange($event)">
             Incluir el día actual
           </mat-slide-toggle>
@@ -27,7 +28,7 @@
       </div>
       <div class="charts-top-bar format-line" *ngIf="!topCards">
         <div class="charts-top-bar-card" [ngClass]="{'charts-top-bar-card--darken': chartType === 'registry'}"
-          style="--max-width: 190px">
+          style="--max-width: 190px" matTooltip="Info about the action" matTooltipPosition="above">
           <h5 class="charts-top-line-card__title">
             Total de registrados
           </h5>
@@ -36,7 +37,7 @@
           </span>
         </div>
         <div class="charts-top-bar-card" [ngClass]="{'charts-top-bar-card--darken': chartType === 'active'}"
-          style="--max-width: 170px">
+          style="--max-width: 170px" matTooltip="Info about the action" matTooltipPosition="above">
           <h5 class="charts-top-line-card__title">
             Total de activos
           </h5>
@@ -45,7 +46,7 @@
           </span>
         </div>
         <div class="charts-top-bar-card" [ngClass]="{'charts-top-bar-card--darken': chartType === 'inactive'}"
-          style="--max-width: 170px">
+          style="--max-width: 170px" matTooltip="Info about the action" matTooltipPosition="above">
           <h5 class="charts-top-line-card__title">
             Total de Inactivos
           </h5>
@@ -54,7 +55,7 @@
           </span>
         </div>
         <div class="charts-top-bar-card" [ngClass]="{'charts-top-bar-card--darken': chartType === 'retirement'}"
-          style="--max-width: 170px">
+          style="--max-width: 170px" matTooltip="Info about the action" matTooltipPosition="above">
           <h5 class="charts-top-line-card__title">
             Total de retirados
           </h5>
@@ -62,36 +63,32 @@
             46,656
           </span>
         </div>
-        <div class="charts-top-bar-card" style="--max-width: 80px; padding-inline: .8rem;">
+        <div class="charts-top-bar-card" style="--max-width: 80px; padding-inline: .8rem;"
+        matTooltip="Info about the action" matTooltipPosition="above">
+        <!-- [matTooltipShowDelay]="showDelay" -->
           <mat-slide-toggle [checked]="currentDay" (change)="currentDayChange($event)">
             Incluir el día actual
           </mat-slide-toggle>
         </div>
       </div>
       <mat-form-field appearance="fill" style="margin-left: auto">
-        <mat-select [(value)]="chartType" (selectionChange)="chartTypeChange($event); ">
-          <mat-option value="amount" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
-            matTooltipPosition="right">
+        <mat-select [(value)]="chartType" (selectionChange)="chartTypeChange($event);">
+          <mat-option value="amount">
             Valor en Ventas
           </mat-option>
-          <mat-option value="quantity" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
-            matTooltipPosition="right">
+          <mat-option value="quantity">
             Cantidad de Ventas
           </mat-option>
-          <mat-option value="registry" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
-            matTooltipPosition="right">
+          <mat-option value="registry">
             Comercios Registrados
           </mat-option>
-          <mat-option value="active" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
-            matTooltipPosition="right">
+          <mat-option value="active">
             Comercios Activos
           </mat-option>
-          <mat-option value="inactive" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
-            matTooltipPosition="right">
+          <mat-option value="inactive">
             Comercios Inactivos
           </mat-option>
-          <mat-option value="retirement" matTooltip="Info about the action" [matTooltipShowDelay]="showDelay"
-            matTooltipPosition="right">
+          <mat-option value="retirement">
             Comercios Retirados
           </mat-option>
         </mat-select>

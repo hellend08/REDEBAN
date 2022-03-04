@@ -22,13 +22,13 @@ export class DashboardBancoComponent implements OnInit {
   public lineChartLabels: any = null;
   public lineChartOptions: any = null;
 
-  registryLineChartLabels = ['10 ene.', '11 ene.', '12 ene.', '13 ene.', '14 ene.', '15 ene.', '16 ene.', '17 ene.', '18 ene.', '19 ene.', '20 ene.', '21 ene.', '22 ene.', '23 ene.', '24 ene.', '25 ene.', '26 ene.', '27 ene.', '28 ene.', '29 ene.', '30 ene.', '31 ene.', '1 feb.', '2 feb.', '3 feb.', '4 feb.', '5 feb.', '6 feb.'];
+  registryLineChartLabels = ['10 ene.', '11 ene.', '12 ene.', '13 ene.', '14 ene.', '15 ene.', '16 ene.', '17 ene.', '18 ene.', '19 ene.', '20 ene.', '21 ene.', '22 ene.', '23 ene.', '24 ene.'];
   
   registryLineChartData = [
     {
       fill: false,
       label: 'Registros',
-      data: [50, 100, 120, 100, 105, 200, 100, 75, 12, 300, 250, 150, 180, 200, 250, 270, 225, 150, 130, 80, 30, 12, 75, 180, 130, 195, 75, 30, 12],
+      data: [0, 0, 1, 0, 0, 0, 0, 2, 3, 0, 4, 1, 0, 3, 0, 0, 5, 0, 60],
       backgroundColor: '#00339F',
       pointBackgroundColor: '#00339F',
       pointBorderColor: '#00339F',
