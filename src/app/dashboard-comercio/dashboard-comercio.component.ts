@@ -27,7 +27,7 @@ export class DashboardComercioComponent implements OnInit {
   amountBarChartData = [
     {
       label: 'Cantidad',
-      data: [480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260],
+      data: [480, 570, 380, 0, 260, 480, 6570, 1380, 480, 260, 480, 900, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 0],
       backgroundColor: ['#00339F', '#86AAF6'],
       hoverBackgroundColor: ['#2855B2', '#CADBFF'],
       borderColor: ['#00339F', '#86AAF6'],
@@ -40,16 +40,33 @@ export class DashboardComercioComponent implements OnInit {
     onClick: this.chartItemClicked,
     scaleShowVerticalLines: false,
     responsive: true,
+    // scales: {
+    //   y: {
+    //     ticks: {
+    //       callback: function (value: any) {
+    //         return value;
+    //       },
+    //     },
+    //   },
+    // },
     scales: {
-      y: {
+      yAxes: [{
         ticks: {
-          callback: function (value: any) {
-            return value;
-          },
-        },
-      },
-    },
+          callback: function(value: any, index: any, values: any) {
+            // return value.toLocaleString("en-US",{style:"currency", currency:"pen"});
+            if(parseInt(value) > 999){
+              return '' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          } else if (parseInt(value) < -999) {
+              return '' + Math.abs(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          } else {
+              return '' + value;
+          }
+          }
+        }
+      }]
+    }
   }
+
 
   chartItemClicked(e: any){
     console.log("🚀 ~ file: bar-chart.component.ts ~ line 17 ~ LineChartComponent ~ chartItemClicked ~ e", e)
@@ -90,7 +107,7 @@ export class DashboardComercioComponent implements OnInit {
   quantityBarChartData = [
     {
       label: 'Cantidad',
-      data: [380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570],
+      data: [380, 480, 260, 480, 570, 380, 480, 260, 1000, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570],
       backgroundColor: ['#00339F', '#86AAF6'],
       hoverBackgroundColor: ['#2855B2', '#CADBFF'],
       borderColor: ['#00339F', '#86AAF6']
@@ -101,14 +118,28 @@ export class DashboardComercioComponent implements OnInit {
     scaleShowVerticalLines: false,
     responsive: true,
     scales: {
-      y: {
+      yAxes: [{
         ticks: {
-          callback: function (value: any) {
-            return value + 'M';
-          },
-        },
-      },
-    },
+          callback: function(value: any, index: any, values: any) {
+            // return value.toLocaleString("en-US",{style:"currency", currency:"USD"});
+            // if(parseInt(value) >= 1000){
+            //   return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            // } else if (parseInt(value) < -999) {
+            //       return '' + Math.abs(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            // } else {
+            //   return '$' + value;
+            // }
+            if(parseInt(value) > 999){
+              return '' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          } else if (parseInt(value) < -999) {
+              return '' + Math.abs(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          } else {
+              return '' + value;
+          }
+          }
+        }
+      }]
+    }
   }
 
   ngOnInit(): void {

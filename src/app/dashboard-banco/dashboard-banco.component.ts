@@ -28,7 +28,7 @@ export class DashboardBancoComponent implements OnInit {
     {
       fill: false,
       label: 'Registros',
-      data: [0, 0, 1, 0, 0, 0, 0, 2, 3, 0, 4, 1, 0, 3, 0, 0, 5, 0, 60],
+      data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60],
       backgroundColor: '#00339F',
       pointBackgroundColor: '#00339F',
       pointBorderColor: '#00339F',
@@ -171,7 +171,7 @@ export class DashboardBancoComponent implements OnInit {
   amountBarChartData = [
     {
       label: 'Cantidad',
-      data: [480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260],
+      data: [480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 1000, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260],
       backgroundColor: ['#FFC697', '#FE502F'],
       hoverBackgroundColor: ['#FFDEC3', '#FD765B'],
       borderColor: ['#00339F', '#86AAF6']
@@ -182,13 +182,20 @@ export class DashboardBancoComponent implements OnInit {
     scaleShowVerticalLines: false,
     responsive: true,
     scales: {
-      y: {
+      yAxes: [{
         ticks: {
-          callback: function (value: any) {
-            return value;
-          },
-        },
-      },
+          callback: function(value: any, index: any, values: any) {
+            // return value.toLocaleString("en-US",{style:"currency", currency:"pen"});
+            if(parseInt(value) > 999){
+              return '' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          } else if (parseInt(value) < -999) {
+              return '' + Math.abs(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          } else {
+              return '' + value;
+          }
+          }
+        }
+      }]
     },
   }
 
@@ -197,7 +204,7 @@ export class DashboardBancoComponent implements OnInit {
   quantityBarChartData = [
     {
       label: 'Cantidad',
-      data: [380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570],
+      data: [380, 480, 260, 480, 570, 380, 1000, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570, 380, 480, 260, 480, 570],
       backgroundColor: ['#FFC697', '#FE502F'],
       hoverBackgroundColor: ['#FFDEC3', '#FD765B'],
       borderColor: ['#00339F', '#86AAF6']
@@ -208,13 +215,20 @@ export class DashboardBancoComponent implements OnInit {
     scaleShowVerticalLines: false,
     responsive: true,
     scales: {
-      y: {
+      yAxes: [{
         ticks: {
-          callback: function (value: any) {
-            return value + 'M';
-          },
-        },
-      },
+          callback: function(value: any, index: any, values: any) {
+            // return value.toLocaleString("en-US",{style:"currency", currency:"pen"});
+            if(parseInt(value) > 999){
+              return '' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          } else if (parseInt(value) < -999) {
+              return '' + Math.abs(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          } else {
+              return '' + value;
+          }
+          }
+        }
+      }]
     },
   }
 

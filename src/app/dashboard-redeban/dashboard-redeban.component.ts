@@ -29,7 +29,7 @@ export class DashboardRedebanComponent implements OnInit {
   public barChartLabels: any = null;
   public barChartOptions: any = null;
   public height: any = 400;
-  public width: any = 500;
+  public width: any = 550;
 
   // public barChartType = 'bar';
   public doughnutChartLegend = true;
@@ -89,7 +89,7 @@ export class DashboardRedebanComponent implements OnInit {
         res({
           labels: this.transactionsBarChartLabels,
           data: this.clientBarChartData,
-          options: this.clientBarChartData
+          options: this.clientBarChartOptions
         })
       }
     })
@@ -133,7 +133,7 @@ export class DashboardRedebanComponent implements OnInit {
   
   clientBarChartData: ChartDataSets[] = [
     { 
-      label: 'Banco 1',
+      label: 'Banco Sofitasa',
       data: [20, 24, 6, 12],
       backgroundColor: ['#478CCA', '#478CCA'],
       hoverBackgroundColor: ['#478CCA', '#478CCA'],
@@ -146,7 +146,7 @@ export class DashboardRedebanComponent implements OnInit {
       // hoverBackgroundColor: ['#2855B2', '#CADBFF'],
     { 
       data: [8, 4, 5, 3],
-      label: 'Banco 2',
+      label: 'Cassi Banco',
       backgroundColor: ['#6AA4D8', '#6AA4D8', '#6AA4D8', '#6AA4D8'],
       hoverBackgroundColor: ['#6AA4D8', '#6AA4D8', '#6AA4D8', '#6AA4D8'],
       borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
@@ -154,7 +154,7 @@ export class DashboardRedebanComponent implements OnInit {
     },
     { 
       data: [5, 16, 9, 5],
-      label: 'Banco 3',
+      label: 'Banco Caja Social',
       backgroundColor: ['#FEF895', '#FEF895', '#FEF895', '#FEF895'],
       hoverBackgroundColor: ['#FEF895', '#FEF895', '#FEF895', '#FEF895'],
       borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
@@ -162,7 +162,7 @@ export class DashboardRedebanComponent implements OnInit {
     },
     { 
       data: [8, 8, 5, 18],
-      label: 'Banco 4',
+      label: 'DAVIVIENDA TEST',
       backgroundColor: ['#F1E517', '#F1E517', '#F1E517', '#F1E517'],
       hoverBackgroundColor: ['#F1E517', '#F1E517', '#F1E517', '#F1E517'],
       borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
@@ -170,7 +170,7 @@ export class DashboardRedebanComponent implements OnInit {
     },
     { 
       data: [6, 12, 18, 7],
-      label: 'Banco 5',
+      label: 'DAVIVIENDA EMI 0160',
       backgroundColor: ['#F3A239', '#F3A239', '#F3A239', '#F3A239'],
       hoverBackgroundColor: ['#F3A239', '#F3A239', '#F3A239', '#F3A239'],
       borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
@@ -178,14 +178,14 @@ export class DashboardRedebanComponent implements OnInit {
     },
     { 
       data: [4, 9, 7, 15],
-      label: 'Banco 6',
+      label: 'Banco de Bogotá(Test)',
       backgroundColor: ['#F9B967', '#F9B967', '#F9B967', '#F9B967'],
       hoverBackgroundColor: ['#F9B967', '#F9B967', '#F9B967', '#F9B967'],
       borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
       stack: 'a'
     },
     { data: [16, 5, 10, 6],
-      label: 'Banco 7',
+      label: 'Banco Caja Social (Test)',
       backgroundColor: ['#EF5654', '#EF5654', '#EF5654', '#EF5654'],
       hoverBackgroundColor: ['#EF5654', '#EF5654', '#EF5654', '#EF5654'],
       borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
@@ -193,7 +193,7 @@ export class DashboardRedebanComponent implements OnInit {
     },
     { 
       data: [8, 2, 15, 8],
-      label: 'Banco 8',
+      label: 'BBVA Colombia (Test)',
       backgroundColor: ['#F48684', '#F48684', '#F48684', '#F48684'],
       hoverBackgroundColor: ['#F48684', '#F48684', '#F48684', '#F48684'],
       borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
@@ -201,7 +201,7 @@ export class DashboardRedebanComponent implements OnInit {
     },
     { 
       data: [3, 8, 5, 9],
-      label: 'Banco 9',
+      label: 'SocotiaBank (Test)',
       backgroundColor: ['#B377C1', '#B377C1', '#B377C1', '#B377C1'],
       hoverBackgroundColor: ['#B377C1', '#B377C1', '#B377C1', '#B377C1'],
       borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
@@ -209,9 +209,49 @@ export class DashboardRedebanComponent implements OnInit {
     },
     { 
       data: [20, 10, 20, 14],
-      label: 'Banco 10',
+      label: 'AV Villas(Test)',
       backgroundColor: ['#9756A7', '#9756A7', '#9756A7', '#9756A7'],
       hoverBackgroundColor: ['#9756A7', '#9756A7', '#9756A7', '#9756A7'],
+      borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+      stack: 'a'
+    },
+    { 
+      data: [2, 10, 12, 3],
+      label: 'Banco de Test 11',
+      backgroundColor: ['#F8B4B2', '#F8B4B2', '#F8B4B2', '#F8B4B2'],
+      hoverBackgroundColor: ['#F8B4B2', '#F8B4B2', '#F8B4B2', '#F8B4B2'],
+      borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+      stack: 'a'
+    },
+    { 
+      data: [10, 12, 5, 11],
+      label: 'Banco de Prueba 12',
+      backgroundColor: ['#FCCC8E', '#FCCC8E', '#FCCC8E', '#FCCC8E'],
+      hoverBackgroundColor: ['#FCCC8E', '#FCCC8E', '#FCCC8E', '#FCCC8E'],
+      borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+      stack: 'a'
+    },
+    { 
+      data: [7, 1, 8, 4],
+      label: 'Banco de Prueba 13',
+      backgroundColor: ['#CA96D6', '#CA96D6', '#CA96D6', '#CA96D6'],
+      hoverBackgroundColor: ['#CA96D6', '#CA96D6', '#CA96D6', '#CA96D6'],
+      borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+      stack: 'a'
+    },
+    { 
+      data: [20, 10, 20, 14],
+      label: 'Banco de Prueba 14',
+      backgroundColor: ['#89C1F2', '#89C1F2', '#89C1F2', '#89C1F2'],
+      hoverBackgroundColor: ['#89C1F2', '#89C1F2', '#89C1F2', '#89C1F2'],
+      borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+      stack: 'a'
+    },
+    { 
+      data: [10, 5, 13, 4],
+      label: 'Banco de Prueba 15',
+      backgroundColor: ['#85C5A5', '#85C5A5', '#85C5A5', '#85C5A5'],
+      hoverBackgroundColor: ['#85C5A5', '#85C5A5', '#85C5A5', '#85C5A5'],
       borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
       stack: 'a'
     }
@@ -220,6 +260,7 @@ export class DashboardRedebanComponent implements OnInit {
   clientBarChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
+    legend: { position: 'left'},
     onClick: this.chartBarClicked,
     // scales: {
     //   y: {
