@@ -70,7 +70,7 @@
       }"></ngx-skeleton-loader>
     </div> -->
     <div class="container" *ngIf="chartType === 'client'">
-        <div class="charts-content">
+        <div class="charts-content" style="width: 48%;">
             <h6 style="margin-bottom: .5rem;">Distribución de personas</h6>
             <app-bar-chart
                 [barChartData]="barChartData"
@@ -82,7 +82,7 @@
             >
             </app-bar-chart>
         </div>
-        <div class="charts-content">
+        <div class="charts-content" style="width: 48%;">
             <h6 style="margin-bottom: .5rem;">Distribución de comercios</h6>
             <app-bar-chart [barChartData]="barChartData" [barChartLabels]="barChartLabels"
                 [barChartOptions]="barChartOptions" [barChartLegend]="barChartLegend" [height]="height" [width]="width">

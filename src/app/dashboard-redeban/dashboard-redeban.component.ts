@@ -134,7 +134,7 @@ export class DashboardRedebanComponent implements OnInit {
   clientBarChartData: ChartDataSets[] = [
     { 
       label: 'Banco Sofitasa',
-      data: [20, 24, 6, 12],
+      data: [0],
       backgroundColor: ['#478CCA', '#478CCA'],
       hoverBackgroundColor: ['#478CCA', '#478CCA'],
       borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
@@ -145,7 +145,7 @@ export class DashboardRedebanComponent implements OnInit {
       // , '#B377C1', '#F48684', '#EF5654', '#F9B967', '#F3A239', '#F1E517', '#FEF895', '#6AA4D8', '#478CCA'],
       // hoverBackgroundColor: ['#2855B2', '#CADBFF'],
     { 
-      data: [8, 4, 5, 3],
+      data: [0],
       label: 'Cassi Banco',
       backgroundColor: ['#6AA4D8', '#6AA4D8', '#6AA4D8', '#6AA4D8'],
       hoverBackgroundColor: ['#6AA4D8', '#6AA4D8', '#6AA4D8', '#6AA4D8'],
@@ -153,7 +153,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [5, 16, 9, 5],
+      data: [0],
       label: 'Banco Caja Social',
       backgroundColor: ['#FEF895', '#FEF895', '#FEF895', '#FEF895'],
       hoverBackgroundColor: ['#FEF895', '#FEF895', '#FEF895', '#FEF895'],
@@ -161,7 +161,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [8, 8, 5, 18],
+      data: [0],
       label: 'DAVIVIENDA TEST',
       backgroundColor: ['#F1E517', '#F1E517', '#F1E517', '#F1E517'],
       hoverBackgroundColor: ['#F1E517', '#F1E517', '#F1E517', '#F1E517'],
@@ -169,7 +169,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [6, 12, 18, 7],
+      data: [0],
       label: 'DAVIVIENDA EMI 0160',
       backgroundColor: ['#F3A239', '#F3A239', '#F3A239', '#F3A239'],
       hoverBackgroundColor: ['#F3A239', '#F3A239', '#F3A239', '#F3A239'],
@@ -177,14 +177,14 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [4, 9, 7, 15],
+      data: [0],
       label: 'Banco de Bogotá(Test)',
       backgroundColor: ['#F9B967', '#F9B967', '#F9B967', '#F9B967'],
       hoverBackgroundColor: ['#F9B967', '#F9B967', '#F9B967', '#F9B967'],
       borderColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
       stack: 'a'
     },
-    { data: [16, 5, 10, 6],
+    { data: [0],
       label: 'Banco Caja Social (Test)',
       backgroundColor: ['#EF5654', '#EF5654', '#EF5654', '#EF5654'],
       hoverBackgroundColor: ['#EF5654', '#EF5654', '#EF5654', '#EF5654'],
@@ -192,7 +192,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [8, 2, 15, 8],
+      data: [0],
       label: 'BBVA Colombia (Test)',
       backgroundColor: ['#F48684', '#F48684', '#F48684', '#F48684'],
       hoverBackgroundColor: ['#F48684', '#F48684', '#F48684', '#F48684'],
@@ -200,7 +200,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [3, 8, 5, 9],
+      data: [0],
       label: 'SocotiaBank (Test)',
       backgroundColor: ['#B377C1', '#B377C1', '#B377C1', '#B377C1'],
       hoverBackgroundColor: ['#B377C1', '#B377C1', '#B377C1', '#B377C1'],
@@ -208,7 +208,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [20, 10, 20, 14],
+      data: [0],
       label: 'AV Villas(Test)',
       backgroundColor: ['#9756A7', '#9756A7', '#9756A7', '#9756A7'],
       hoverBackgroundColor: ['#9756A7', '#9756A7', '#9756A7', '#9756A7'],
@@ -216,7 +216,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [2, 10, 12, 3],
+      data: [0],
       label: 'Banco de Test 11',
       backgroundColor: ['#F8B4B2', '#F8B4B2', '#F8B4B2', '#F8B4B2'],
       hoverBackgroundColor: ['#F8B4B2', '#F8B4B2', '#F8B4B2', '#F8B4B2'],
@@ -224,7 +224,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [10, 12, 5, 11],
+      data: [0],
       label: 'Banco de Prueba 12',
       backgroundColor: ['#FCCC8E', '#FCCC8E', '#FCCC8E', '#FCCC8E'],
       hoverBackgroundColor: ['#FCCC8E', '#FCCC8E', '#FCCC8E', '#FCCC8E'],
@@ -232,7 +232,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [7, 1, 8, 4],
+      data: [0],
       label: 'Banco de Prueba 13',
       backgroundColor: ['#CA96D6', '#CA96D6', '#CA96D6', '#CA96D6'],
       hoverBackgroundColor: ['#CA96D6', '#CA96D6', '#CA96D6', '#CA96D6'],
@@ -240,7 +240,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [20, 10, 20, 14],
+      data: [0],
       label: 'Banco de Prueba 14',
       backgroundColor: ['#89C1F2', '#89C1F2', '#89C1F2', '#89C1F2'],
       hoverBackgroundColor: ['#89C1F2', '#89C1F2', '#89C1F2', '#89C1F2'],
@@ -248,7 +248,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [10, 5, 13, 4],
+      data: [0],
       label: 'Banco de Prueba 15',
       backgroundColor: ['#85C5A5', '#85C5A5', '#85C5A5', '#85C5A5'],
       hoverBackgroundColor: ['#85C5A5', '#85C5A5', '#85C5A5', '#85C5A5'],
@@ -260,6 +260,13 @@ export class DashboardRedebanComponent implements OnInit {
   clientBarChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
+    scales: {
+      yAxes: [{
+          ticks: {
+              beginAtZero: true
+          }
+      }]
+    },
     legend: { position: 'left'},
     onClick: this.chartBarClicked,
     // scales: {
