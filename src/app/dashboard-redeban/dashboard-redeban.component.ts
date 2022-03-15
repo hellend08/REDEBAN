@@ -232,7 +232,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [120, ],
+      data: [0 ],
       label: 'Banco de Prueba 13',
       backgroundColor: ['#CA96D6', '#CA96D6', '#CA96D6', '#CA96D6'],
       hoverBackgroundColor: ['#CA96D6', '#CA96D6', '#CA96D6', '#CA96D6'],
@@ -240,7 +240,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [0, 100],
+      data: [0, 0],
       label: 'Banco de Prueba 14',
       backgroundColor: ['#89C1F2', '#89C1F2', '#89C1F2', '#89C1F2'],
       hoverBackgroundColor: ['#89C1F2', '#89C1F2', '#89C1F2', '#89C1F2'],
@@ -248,7 +248,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [300, 1000],
+      data: [0, 0],
       label: 'Banco de Prueba 15',
       backgroundColor: ['#85C5A5', '#85C5A5', '#85C5A5', '#85C5A5'],
       hoverBackgroundColor: ['#85C5A5', '#85C5A5', '#85C5A5', '#85C5A5'],
@@ -281,6 +281,7 @@ export class DashboardRedebanComponent implements OnInit {
               }
               },
               beginAtZero: true,
+              precision:0
           }
       }]
     },
