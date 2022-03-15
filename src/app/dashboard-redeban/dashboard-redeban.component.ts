@@ -232,7 +232,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [0],
+      data: [120, ],
       label: 'Banco de Prueba 13',
       backgroundColor: ['#CA96D6', '#CA96D6', '#CA96D6', '#CA96D6'],
       hoverBackgroundColor: ['#CA96D6', '#CA96D6', '#CA96D6', '#CA96D6'],
@@ -240,7 +240,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [0],
+      data: [0, 100],
       label: 'Banco de Prueba 14',
       backgroundColor: ['#89C1F2', '#89C1F2', '#89C1F2', '#89C1F2'],
       hoverBackgroundColor: ['#89C1F2', '#89C1F2', '#89C1F2', '#89C1F2'],
@@ -248,7 +248,7 @@ export class DashboardRedebanComponent implements OnInit {
       stack: 'a'
     },
     { 
-      data: [0],
+      data: [300, 1000],
       label: 'Banco de Prueba 15',
       backgroundColor: ['#85C5A5', '#85C5A5', '#85C5A5', '#85C5A5'],
       hoverBackgroundColor: ['#85C5A5', '#85C5A5', '#85C5A5', '#85C5A5'],
@@ -263,7 +263,24 @@ export class DashboardRedebanComponent implements OnInit {
     scales: {
       yAxes: [{
           ticks: {
-              beginAtZero: true
+              callback: function(value: any, index: any, values: any) {
+                // return value.toLocaleString("en-US",{style:"currency", currency:"USD"});
+                // if(parseInt(value) >= 1000){
+                //   return '$' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                // } else if (parseInt(value) < -999) {
+                //       return '' + Math.abs(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                // } else {
+                //   return '$' + value;
+                // }
+                if(parseInt(value) > 999){
+                  return '' + value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+              } else if (parseInt(value) < -999) {
+                  return '' + Math.abs(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+              } else {
+                  return '' + value;
+              }
+              },
+              beginAtZero: true,
           }
       }]
     },
